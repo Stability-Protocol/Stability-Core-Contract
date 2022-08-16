@@ -1,0 +1,2279 @@
+{
+  "contractName": "TroveManagerBase",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_borrower",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_debt",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "_tokens",
+          "type": "address[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "_amounts",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum TroveManagerBase.TroveManagerOperation",
+          "name": "operation",
+          "type": "uint8"
+        }
+      ],
+      "name": "TroveUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "BORROWING_FEE_FLOOR",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "CCR",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "DECIMAL_PRECISION",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MCR",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MIN_NET_DEBT",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "REDEMPTION_FEE_FLOOR",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SUSD_GAS_COMPENSATION",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getEntireSystemColl",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getEntireSystemDebt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isOwner",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_borrower\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_debt\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"_tokens\",\"type\":\"address[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"_amounts\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"enum TroveManagerBase.TroveManagerOperation\",\"name\":\"operation\",\"type\":\"uint8\"}],\"name\":\"TroveUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"BORROWING_FEE_FLOOR\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"CCR\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"DECIMAL_PRECISION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MCR\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MIN_NET_DEBT\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"REDEMPTION_FEE_FLOOR\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SUSD_GAS_COMPENSATION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getEntireSystemColl\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getEntireSystemDebt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Contains shared functionality of TroveManagerLiquidations, TroveManagerRedemptions, and TroveManager.  Keeps addresses to cache, events, structs, status, etc. Also keeps Trove struct. \",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/Dependencies/TroveManagerBase.sol\":\"TroveManagerBase\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Dependencies/BaseMath.sol\":{\"keccak256\":\"0xfdc09bb7881be18ae68eb1bd6be497e3d23f90bc101d8e1c26f9bfbedabb919c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://5d2e9d7e0e7d64da76b945b275deec8ee82c816b66e018c25ae6b0f18a8c1476\",\"dweb:/ipfs/QmY72STa3386Z6jM3uitmjNj4Kt97Zmvx37Hncusea2Pn8\"]},\"project:/Dependencies/LiquityBase.sol\":{\"keccak256\":\"0xd2f487f2bcd7d43d8d6feffb8b4dfeab73a15bae762a73870cc7149b041272dc\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://4b4a539ab0bd8c6da2f5ea374e61a93ddccbba18634ea89af2f026357e044c2a\",\"dweb:/ipfs/QmdDo1CDeaJhjAA4soenMjufSWvL6szffEANWDFXXksQDb\"]},\"project:/Dependencies/LiquityMath.sol\":{\"keccak256\":\"0x2b37a723a6da45691f6a7f95a90b715676252f79d8abd2eb53010688bae00c21\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6e13f5757363ad457fa87638a58e3677165b2c44873fd4e4ebb231524d0b96ed\",\"dweb:/ipfs/QmThqh3y6nWuv6C4QBPAVYpNw9Y9dCGw3mZYTz8omeGPES\"]},\"project:/Dependencies/Ownable.sol\":{\"keccak256\":\"0x48ce77ac3f01579e716c8dcce4da13556c9f4ae5cffa2f688fcffdc63dd1894a\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://2a2caa226aeb90245dbe1b869965e2832bb2fb6b83607863e74c29f25ca1ce42\",\"dweb:/ipfs/QmPuuZ8ccDFQsDxRfiEzdndbZ7DUafnk4MsrtY3eRrSFJT\"]},\"project:/Dependencies/SafeMath.sol\":{\"keccak256\":\"0xae986c5acf308d03cf60b894b2b037cb23c8b59d1b8aba5ba3c0ae74df9b8ffd\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://23f68c5ba4b24f20a3944ce04e83ac0538d1711d2bc774ab06f5b984b7b8bb48\",\"dweb:/ipfs/QmTL6F7NFzQfjEuepJcgG38SMgBghFH3JxYp4ZKFg9B9Mo\"]},\"project:/Dependencies/StabCustomBase.sol\":{\"keccak256\":\"0x735899445e5fd23dbb4a772909af951e233a5b1f36d226e13fdae7a3a8e97e33\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://e86ff7145974bdf00d590d23ce28df60fba84f914d8cdecf55f2ebb017005f28\",\"dweb:/ipfs/QmabrJduEZ7j4GFhMPfFLkJz64refrTPSU7y2iDABkQGLJ\"]},\"project:/Dependencies/TroveManagerBase.sol\":{\"keccak256\":\"0xf5d40fbba8afadae33951f998e7b5b7a459a4047b1e48c7c87c72f39c93bb717\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://b9b2610ad8a0b97dcfaee629a2615677c9b572868d9cd111ad8b35e3f4102bb5\",\"dweb:/ipfs/QmVy6D4Kmfp8kEgJJKF3TXAAwa9HJnxAaS5xD4xTPZuGgU\"]},\"project:/Interfaces/IActivePool.sol\":{\"keccak256\":\"0xa2f764de15c2049f669750c476acd32a3567c110343ad7465a7a6e22ec466d18\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://dc910fec109a7708e0b07517a5584f01cb9b08404383e78af8e4ab58b31dadc6\",\"dweb:/ipfs/QmZzqsPgsib2V19LpB6EvAGqAnLn1LfJaRPhwSRdSKo3NA\"]},\"project:/Interfaces/ICollSurplusPool.sol\":{\"keccak256\":\"0x9502bf5f44e7cf3f17ee0f3d9ee9c63a14cc3170f66a0ca8e7bcb65a34918d41\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://5701d894302a228d81325a255569bde3a76311063b0fa354f31dfc5a95b0244d\",\"dweb:/ipfs/QmViYr3nXjCMNv1sWqTXHwuu1QU1DA9r5efFWoVAgezqan\"]},\"project:/Interfaces/ICollateralReceiver.sol\":{\"keccak256\":\"0xb8944ce690ca2edd6b9f24e0a506d0d308678f7a8e42e64c12b29661ef6a16eb\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://902f6a77e68499b5d16c0dcdff5f6703e25a47ee20f7019e24552c11b0d99a37\",\"dweb:/ipfs/QmXXj9CxZW9AWyxnXNqAcTuUpXxtQCv78UuvFqY1UZbDmM\"]},\"project:/Interfaces/IDefaultPool.sol\":{\"keccak256\":\"0x04b50731f08f7fd1cef4a740d8da34dbfc60a2f4fec11d60d31f1822afad079e\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://1a12cde1fb21588a188ee274c18e89c1004ce9638f9ca7867060c1540c97d2a7\",\"dweb:/ipfs/QmQbYC5RxESWNgPkXiZQdYAx293NTRFnPRXbrSuVf3dTEi\"]},\"project:/Interfaces/IERC20.sol\":{\"keccak256\":\"0xe53e56d1b6b10618f5132181442c94ede7208b0d3aea2323e96cbd162e9c68c3\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://2053a2c6e4ad9090683e085184c00ea043483a2cfdccefca4b36340e48d5c9a9\",\"dweb:/ipfs/QmW5SuxbPktAxMGEv1QqbEA9EP7fUTbu8np2zsf5EKNavH\"]},\"project:/Interfaces/IERC2612.sol\":{\"keccak256\":\"0x40c2781d243fa5c375dceb4062e478b3182d47726f212ca9931109933a42aec7\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://5fd86d68bbef8239ebb31b111ba1e1111ba3db79faf9ec4aa987b036d9b92bea\",\"dweb:/ipfs/QmTiCeVdNKLL8MURVRxe6VeLTbeob8H8PL1LaUtc4NfpxA\"]},\"project:/Interfaces/ILiquityBase.sol\":{\"keccak256\":\"0x817a1416164e60eda90fcc6b0756506314b47663f523f4f5611118d7d52c50b5\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://c05a46d0e74b81b60a66a510aae76b9eb9b1d601d3dd43b188cbe13282364a87\",\"dweb:/ipfs/QmdgUUB7GxGpXAYMeFsBYD21SbpsG8wJCuPQSHjUXsJQL2\"]},\"project:/Interfaces/IPool.sol\":{\"keccak256\":\"0x213057a1ba72d4cbcb4dba8d57d6010b55b2484fce66f95f7020c8e9af50e6ec\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://e368ca44b05c3cb287425db2c342ce7dff7927f854e361c6477f9e7fcba7b72d\",\"dweb:/ipfs/QmQpqw3qkHg4wWovKUtVJ4gY6n6ex9SJjhVjJK3NRhZAnr\"]},\"project:/Interfaces/IPriceFeed.sol\":{\"keccak256\":\"0xf81e74e87004ff2ffb5e70ac4dd2544f82894a9eaac06f32e395dd0821882c1c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://9057703d013737b50d4de7c1f871966d85bf90e801a48fa284740652140866b9\",\"dweb:/ipfs/QmavqaTbGZsR2tFDWRVDd6Pgj2o8SUMT7YfpVunnEfdsKZ\"]},\"project:/Interfaces/ISTBStaking.sol\":{\"keccak256\":\"0x0f8a6016167fa5f285d3d719c58a4357da00a81ed18a68a8f211ce7a786c8bff\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6c22fc5834bcbfa3386754bda9d79139491216fdfc4692ddcab037e36b6f90f5\",\"dweb:/ipfs/QmRjdM7LFvH92LdkqkE7FbUDoZcGGTK8f2YEsKmjPv6dg3\"]},\"project:/Interfaces/ISTBToken.sol\":{\"keccak256\":\"0x2519316fe4ebbf06239ad329e2f0040ec6965ac0b1cb0ba96d512804a9d3d256\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://5102d24394130e82988faaf34226f2a702a0df2dbeff7427f6c7aa5fffe93b91\",\"dweb:/ipfs/Qmb8JXNcreJ6i5WjhZ11UpyymhZpvRJKqHwWE99sCi9yua\"]},\"project:/Interfaces/ISUSDToken.sol\":{\"keccak256\":\"0x71c03cb2d43c85ea1152ff8beea7f8e466c24b1ef25f14fce0b1dd74f89f3da6\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6f0c0d91c7ec1c6bdbdd104aa9ec71af2f24f1a9dda7b14b63d2c9aaeb9ec99d\",\"dweb:/ipfs/QmRMSRPYv75U9iZVc5FK1GpPPyDveg4DuHdutuExSnQpi3\"]},\"project:/Interfaces/ISortedTroves.sol\":{\"keccak256\":\"0x3580ed12d898fe2cf084ba01f623bdc14dbb231f23487558346299031d3c7e36\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://04447e41f285eade7028cb1d1191b8b35d3ecd1af6923440229f4455e222c5f9\",\"dweb:/ipfs/QmV496nyBYhzqk2bFJxeKTnyDJfaWLATYqQtWbLeMaYQT6\"]},\"project:/Interfaces/IStabilityPool.sol\":{\"keccak256\":\"0x06ee1ab7b6113f9f0cafadec67cd4501fed65c3e7f146e05d9f789f8f676ddb6\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://bc525d3f6132d69f5b3b26aaa42083a21c58138bb61e8470020b70645886253e\",\"dweb:/ipfs/QmXP55Y6j9L2xvKkZJrFgfZaQsY5uMVbfKqCPD5CYCg2rc\"]},\"project:/Interfaces/ITroveManager.sol\":{\"keccak256\":\"0x8d8728182e940ed01ac6333705bbb17632d5b825bc0a98707b25f1ada96b643d\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://1ada6bb390ade02a4491e1e1e48e1683e3a54631dcfe3bda9c94e85919825803\",\"dweb:/ipfs/QmSNUhwcyAckBvizLHK5jH7TDGRvbu4BwnaWXLGaTw9BT4\"]},\"project:/Interfaces/ITroveManagerLiquidations.sol\":{\"keccak256\":\"0x8768a07f20bf2dac4fb43a3b285ea514be4590407429069485d3450be38fbe3e\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://ae4c033ec5979be2ba0f851dd36875f537f3099b2176c96b75c0e6eb8bd00ef3\",\"dweb:/ipfs/QmWrCKcg5KMRCC2WjZFRsAj7W1RtHXxFNjq9fdo3i57jHC\"]},\"project:/Interfaces/ITroveManagerRedemptions.sol\":{\"keccak256\":\"0x4f2143cdf90fc7822b862ffba4a71b46b077f77eea1978044cd526a578d62375\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://122d3b5f5bb490de4053b9b75b79eaccfba4d4ab81e164209b5376c28e0199c2\",\"dweb:/ipfs/QmcS9uzbucRF3kFXwpWZU1VchbGX5FeUzsSqyweLpoFH6r\"]},\"project:/Interfaces/IWhitelist.sol\":{\"keccak256\":\"0x9fed9cc9ee6bf1bf39d453a681592dc510bacde8ebd84b0d74758e1af941abfd\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://add3945970fa6aaabf4d3fb524a2480abc776c588e882060940f75b743b08671\",\"dweb:/ipfs/QmQMvTuNF9XXrUmq6ggsM8LMVYkdoqZGvhz5EkPeVuGrpo\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5033600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055503373ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e060405160405180910390a36105ed806100bc6000396000f3fe608060405234801561001057600080fd5b50600436106100a95760003560e01c806387dc66561161007157806387dc665614610144578063887105d3146101625780638da5cb5b146101805780638f32d59b146101ca578063a20baee6146101ec578063f92d34331461020a576100a9565b80631bf43555146100ae57806328d28b5b146100cc5780635733d58f146100ea578063794e572414610108578063795d26c314610126575b600080fd5b6100b6610228565b6040518082815260200191505060405180910390f35b6100d4610235565b6040518082815260200191505060405180910390f35b6100f261024f565b6040518082815260200191505060405180910390f35b61011061025b565b6040518082815260200191505060405180910390f35b61012e610267565b6040518082815260200191505060405180910390f35b61014c6103d0565b6040518082815260200191505060405180910390f35b61016a6103dd565b6040518082815260200191505060405180910390f35b610188610487565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101d26104b1565b604051808215151515815260200191505060405180910390f35b6101f4610509565b6040518082815260200191505060405180910390f35b610212610515565b6040518082815260200191505060405180910390f35b68056bc75e2d6310000081565b60056103e8670de0b6b3a76400008161024a57fe5b040281565b6714d1120d7b16000081565b670f43fc2c04ee000081565b600080600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663c24103646040518163ffffffff1660e01b815260040160206040518083038186803b1580156102d257600080fd5b505afa1580156102e6573d6000803e3d6000fd5b505050506040513d60208110156102fc57600080fd5b810190808051906020019092919050505090506000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663c24103646040518163ffffffff1660e01b815260040160206040518083038186803b15801561037957600080fd5b505afa15801561038d573d6000803e3d6000fd5b505050506040513d60208110156103a357600080fd5b810190808051906020019092919050505090506103c9818361052f90919063ffffffff16565b9250505090565b6802b5e3af16b188000081565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663651340c46040518163ffffffff1660e01b815260040160206040518083038186803b15801561044757600080fd5b505afa15801561045b573d6000803e3d6000fd5b505050506040513d602081101561047157600080fd5b8101908080519060200190929190505050905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b670de0b6b3a764000081565b60056103e8670de0b6b3a76400008161052a57fe5b040281565b6000808284019050838110156105ad576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600c8152602001807f616464206f766572666c6f77000000000000000000000000000000000000000081525060200191505060405180910390fd5b809150509291505056fea264697066735822122034dfee67a585fefad2e6cdd32d82dde9bf181a87e72b8f5d85a6dbf8f3b44c4164736f6c634300060b0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a95760003560e01c806387dc66561161007157806387dc665614610144578063887105d3146101625780638da5cb5b146101805780638f32d59b146101ca578063a20baee6146101ec578063f92d34331461020a576100a9565b80631bf43555146100ae57806328d28b5b146100cc5780635733d58f146100ea578063794e572414610108578063795d26c314610126575b600080fd5b6100b6610228565b6040518082815260200191505060405180910390f35b6100d4610235565b6040518082815260200191505060405180910390f35b6100f261024f565b6040518082815260200191505060405180910390f35b61011061025b565b6040518082815260200191505060405180910390f35b61012e610267565b6040518082815260200191505060405180910390f35b61014c6103d0565b6040518082815260200191505060405180910390f35b61016a6103dd565b6040518082815260200191505060405180910390f35b610188610487565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101d26104b1565b604051808215151515815260200191505060405180910390f35b6101f4610509565b6040518082815260200191505060405180910390f35b610212610515565b6040518082815260200191505060405180910390f35b68056bc75e2d6310000081565b60056103e8670de0b6b3a76400008161024a57fe5b040281565b6714d1120d7b16000081565b670f43fc2c04ee000081565b600080600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663c24103646040518163ffffffff1660e01b815260040160206040518083038186803b1580156102d257600080fd5b505afa1580156102e6573d6000803e3d6000fd5b505050506040513d60208110156102fc57600080fd5b810190808051906020019092919050505090506000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663c24103646040518163ffffffff1660e01b815260040160206040518083038186803b15801561037957600080fd5b505afa15801561038d573d6000803e3d6000fd5b505050506040513d60208110156103a357600080fd5b810190808051906020019092919050505090506103c9818361052f90919063ffffffff16565b9250505090565b6802b5e3af16b188000081565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663651340c46040518163ffffffff1660e01b815260040160206040518083038186803b15801561044757600080fd5b505afa15801561045b573d6000803e3d6000fd5b505050506040513d602081101561047157600080fd5b8101908080519060200190929190505050905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b670de0b6b3a764000081565b60056103e8670de0b6b3a76400008161052a57fe5b040281565b6000808284019050838110156105ad576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600c8152602001807f616464206f766572666c6f77000000000000000000000000000000000000000081525060200191505060405180910390fd5b809150509291505056fea264697066735822122034dfee67a585fefad2e6cdd32d82dde9bf181a87e72b8f5d85a6dbf8f3b44c4164736f6c634300060b0033",
+  "immutableReferences": {},
+  "sourceMap": "864:1223:14:-:0;;;;;;;;;;;;;854:10:7;845:6;;:19;;;;;;;;;;;;;;;;;;912:10;879:44;;908:1;879:44;;;;;;;;;;;;864:1223:14;;;;;;",
+  "deployedSourceMap": "864:1223:14:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;901:42:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1082:72;;;:::i;:::-;;;;;;;;;;;;;;;;;;;681:32;;;:::i;:::-;;;;;;;;;;;;;;;;;;;499;;;:::i;:::-;;;;;;;;;;;;;;;;;;;2039:223;;;:::i;:::-;;;;;;;;;;;;;;;;;;;793:50;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1926:106;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1006:77:7;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1339:90;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;89:45:2;;;:::i;:::-;;;;;;;;;;;;;;;;;;;997:71:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;901:42;937:6;901:42;:::o;1082:72::-;1153:1;1146:4;130::2;1126:24:4;;;;;;:28;1082:72;:::o;681:32::-;708:5;681:32;:::o;499:::-;526:5;499:32;:::o;2039:223::-;2100:4;2116:15;2134:10;;;;;;;;;;;:22;;;:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2116:42;;2168:15;2186:11;;;;;;;;;;;:23;;;:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2168:43;;2229:26;2244:10;2229;:14;;:26;;;;:::i;:::-;2222:33;;;;2039:223;:::o;793:50::-;838:5;793:50;:::o;1926:106::-;1978:4;2001:10;;;;;;;;;;;:22;;;:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1994:31;;1926:106;:::o;1006:77:7:-;1044:7;1070:6;;;;;;;;;;;1063:13;;1006:77;:::o;1339:90::-;1379:4;1416:6;;;;;;;;;;;1402:20;;:10;:20;;;1395:27;;1339:90;:::o;89:45:2:-;130:4;89:45;:::o;997:71:4:-;1067:1;1060:4;130::2;1040:24:4;;;;;;:28;997:71;:::o;1012:161:12:-;1070:7;1089:9;1105:1;1101;:5;1089:17;;1129:1;1124;:6;;1116:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1165:1;1158:8;;;1012:161;;;;:::o",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\nimport \"../Interfaces/ITroveManager.sol\";\nimport \"../Interfaces/IStabilityPool.sol\";\nimport \"../Interfaces/ICollSurplusPool.sol\";\nimport \"../Interfaces/ISUSDToken.sol\";\nimport \"../Interfaces/ISortedTroves.sol\";\nimport \"../Interfaces/ISTBToken.sol\";\n//import \"../Interfaces/ISSTB.sol\";\nimport \"../Interfaces/ISTBStaking.sol\";\nimport \"../Interfaces/IActivePool.sol\";\nimport \"../Interfaces/ITroveManagerLiquidations.sol\";\nimport \"../Interfaces/ITroveManagerRedemptions.sol\"; ///Users/phaxsam/Core-Stability_Truffle/Interfaces/ITroveRedemptions.sol\nimport \"./LiquityBase.sol\";\nimport \"./Ownable.sol\";\n\n/** \n * Contains shared functionality of TroveManagerLiquidations, TroveManagerRedemptions, and TroveManager. \n * Keeps addresses to cache, events, structs, status, etc. Also keeps Trove struct. \n */\n\ncontract TroveManagerBase is LiquityBase, Ownable {\n\n    // --- Connected contract declarations ---\n\n    // A doubly linked list of Troves, sorted by their sorted by their individual collateral ratios\n\n    struct ContractsCache {\n        IActivePool activePool;\n        IDefaultPool defaultPool;\n        ISUSDToken susdToken;\n        ISSTB sSTB;\n        ISortedTroves sortedTroves;\n        ICollSurplusPool collSurplusPool;\n        address gasPoolAddress;\n    }\n\n    struct SingleRedemptionValues {\n        uint SUSDLot;\n        newColls CollLot;\n        bool cancelledPartial;\n    }\n\n    enum Status {\n        nonExistent,\n        active,\n        closedByOwner,\n        closedByLiquidation,\n        closedByRedemption\n    }\n\n    enum TroveManagerOperation {\n        applyPendingRewards,\n        liquidateInNormalMode,\n        liquidateInRecoveryMode,\n        redeemCollateral\n    }\n\n    // Store the necessary data for a trove\n    struct Trove {\n        newColls colls;\n        uint debt;\n        mapping(address => uint) stakes;\n        Status status;\n        uint128 arrayIndex;\n    }\n\n\n    event TroveUpdated(address indexed _borrower, uint _debt, address[] _tokens, uint[] _amounts, TroveManagerOperation operation);\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/Dependencies/TroveManagerBase.sol",
+  "ast": {
+    "absolutePath": "project:/Dependencies/TroveManagerBase.sol",
+    "exportedSymbols": {
+      "TroveManagerBase": [
+        2286
+      ]
+    },
+    "id": 2287,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2208,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:14"
+      },
+      {
+        "absolutePath": "project:/Interfaces/ITroveManager.sol",
+        "file": "../Interfaces/ITroveManager.sol",
+        "id": 2209,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 5734,
+        "src": "65:41:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/IStabilityPool.sol",
+        "file": "../Interfaces/IStabilityPool.sol",
+        "id": 2210,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 5109,
+        "src": "107:42:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/ICollSurplusPool.sol",
+        "file": "../Interfaces/ICollSurplusPool.sol",
+        "id": 2211,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 4073,
+        "src": "150:44:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/ISUSDToken.sol",
+        "file": "../Interfaces/ISUSDToken.sol",
+        "id": 2212,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 4665,
+        "src": "195:38:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/ISortedTroves.sol",
+        "file": "../Interfaces/ISortedTroves.sol",
+        "id": 2213,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 4806,
+        "src": "234:41:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/ISTBToken.sol",
+        "file": "../Interfaces/ISTBToken.sol",
+        "id": 2214,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 4606,
+        "src": "276:37:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/ISTBStaking.sol",
+        "file": "../Interfaces/ISTBStaking.sol",
+        "id": 2215,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 4585,
+        "src": "350:39:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/IActivePool.sol",
+        "file": "../Interfaces/IActivePool.sol",
+        "id": 2216,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 3780,
+        "src": "390:39:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/ITroveManagerLiquidations.sol",
+        "file": "../Interfaces/ITroveManagerLiquidations.sol",
+        "id": 2217,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 5745,
+        "src": "430:53:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/ITroveManagerRedemptions.sol",
+        "file": "../Interfaces/ITroveManagerRedemptions.sol",
+        "id": 2218,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 5767,
+        "src": "484:52:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Dependencies/LiquityBase.sol",
+        "file": "./LiquityBase.sol",
+        "id": 2219,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 759,
+        "src": "610:27:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Dependencies/Ownable.sol",
+        "file": "./Ownable.sol",
+        "id": 2220,
+        "nodeType": "ImportDirective",
+        "scope": 2287,
+        "sourceUnit": 1124,
+        "src": "638:23:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2222,
+              "name": "LiquityBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 758,
+              "src": "893:11:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LiquityBase_$758",
+                "typeString": "contract LiquityBase"
+              }
+            },
+            "id": 2223,
+            "nodeType": "InheritanceSpecifier",
+            "src": "893:11:14"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2224,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1123,
+              "src": "906:7:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$1123",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 2225,
+            "nodeType": "InheritanceSpecifier",
+            "src": "906:7:14"
+          }
+        ],
+        "contractDependencies": [
+          347,
+          758,
+          1123,
+          2206,
+          4330
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 2221,
+          "nodeType": "StructuredDocumentation",
+          "src": "663:199:14",
+          "text": " Contains shared functionality of TroveManagerLiquidations, TroveManagerRedemptions, and TroveManager. \n Keeps addresses to cache, events, structs, status, etc. Also keeps Trove struct. "
+        },
+        "fullyImplemented": true,
+        "id": 2286,
+        "linearizedBaseContracts": [
+          2286,
+          1123,
+          758,
+          2206,
+          347,
+          4330
+        ],
+        "name": "TroveManagerBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "TroveManagerBase.ContractsCache",
+            "id": 2240,
+            "members": [
+              {
+                "constant": false,
+                "id": 2227,
+                "mutability": "mutable",
+                "name": "activePool",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2240,
+                "src": "1102:22:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_IActivePool_$3779",
+                  "typeString": "contract IActivePool"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2226,
+                  "name": "IActivePool",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 3779,
+                  "src": "1102:11:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IActivePool_$3779",
+                    "typeString": "contract IActivePool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2229,
+                "mutability": "mutable",
+                "name": "defaultPool",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2240,
+                "src": "1134:24:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_IDefaultPool_$4165",
+                  "typeString": "contract IDefaultPool"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2228,
+                  "name": "IDefaultPool",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 4165,
+                  "src": "1134:12:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IDefaultPool_$4165",
+                    "typeString": "contract IDefaultPool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2231,
+                "mutability": "mutable",
+                "name": "susdToken",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2240,
+                "src": "1168:20:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_ISUSDToken_$4664",
+                  "typeString": "contract ISUSDToken"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2230,
+                  "name": "ISUSDToken",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 4664,
+                  "src": "1168:10:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISUSDToken_$4664",
+                    "typeString": "contract ISUSDToken"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2233,
+                "mutability": "mutable",
+                "name": "sSTB",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2240,
+                "src": "1198:10:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_ISSTB_$4584",
+                  "typeString": "contract ISSTB"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2232,
+                  "name": "ISSTB",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 4584,
+                  "src": "1198:5:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISSTB_$4584",
+                    "typeString": "contract ISSTB"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2235,
+                "mutability": "mutable",
+                "name": "sortedTroves",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2240,
+                "src": "1218:26:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_ISortedTroves_$4805",
+                  "typeString": "contract ISortedTroves"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2234,
+                  "name": "ISortedTroves",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 4805,
+                  "src": "1218:13:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISortedTroves_$4805",
+                    "typeString": "contract ISortedTroves"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2237,
+                "mutability": "mutable",
+                "name": "collSurplusPool",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2240,
+                "src": "1254:32:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_ICollSurplusPool_$4072",
+                  "typeString": "contract ICollSurplusPool"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2236,
+                  "name": "ICollSurplusPool",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 4072,
+                  "src": "1254:16:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ICollSurplusPool_$4072",
+                    "typeString": "contract ICollSurplusPool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2239,
+                "mutability": "mutable",
+                "name": "gasPoolAddress",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2240,
+                "src": "1296:22:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 2238,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1296:7:14",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ContractsCache",
+            "nodeType": "StructDefinition",
+            "scope": 2286,
+            "src": "1070:255:14",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "TroveManagerBase.SingleRedemptionValues",
+            "id": 2247,
+            "members": [
+              {
+                "constant": false,
+                "id": 2242,
+                "mutability": "mutable",
+                "name": "SUSDLot",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2247,
+                "src": "1371:12:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2241,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1371:4:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2244,
+                "mutability": "mutable",
+                "name": "CollLot",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2247,
+                "src": "1393:16:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_newColls_$1910_storage_ptr",
+                  "typeString": "struct StabCustomBase.newColls"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2243,
+                  "name": "newColls",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1910,
+                  "src": "1393:8:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_newColls_$1910_storage_ptr",
+                    "typeString": "struct StabCustomBase.newColls"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2246,
+                "mutability": "mutable",
+                "name": "cancelledPartial",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2247,
+                "src": "1419:21:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 2245,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1419:4:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "SingleRedemptionValues",
+            "nodeType": "StructDefinition",
+            "scope": 2286,
+            "src": "1331:116:14",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "TroveManagerBase.Status",
+            "id": 2253,
+            "members": [
+              {
+                "id": 2248,
+                "name": "nonExistent",
+                "nodeType": "EnumValue",
+                "src": "1475:11:14"
+              },
+              {
+                "id": 2249,
+                "name": "active",
+                "nodeType": "EnumValue",
+                "src": "1496:6:14"
+              },
+              {
+                "id": 2250,
+                "name": "closedByOwner",
+                "nodeType": "EnumValue",
+                "src": "1512:13:14"
+              },
+              {
+                "id": 2251,
+                "name": "closedByLiquidation",
+                "nodeType": "EnumValue",
+                "src": "1535:19:14"
+              },
+              {
+                "id": 2252,
+                "name": "closedByRedemption",
+                "nodeType": "EnumValue",
+                "src": "1564:18:14"
+              }
+            ],
+            "name": "Status",
+            "nodeType": "EnumDefinition",
+            "src": "1453:135:14"
+          },
+          {
+            "canonicalName": "TroveManagerBase.TroveManagerOperation",
+            "id": 2258,
+            "members": [
+              {
+                "id": 2254,
+                "name": "applyPendingRewards",
+                "nodeType": "EnumValue",
+                "src": "1631:19:14"
+              },
+              {
+                "id": 2255,
+                "name": "liquidateInNormalMode",
+                "nodeType": "EnumValue",
+                "src": "1660:21:14"
+              },
+              {
+                "id": 2256,
+                "name": "liquidateInRecoveryMode",
+                "nodeType": "EnumValue",
+                "src": "1691:23:14"
+              },
+              {
+                "id": 2257,
+                "name": "redeemCollateral",
+                "nodeType": "EnumValue",
+                "src": "1724:16:14"
+              }
+            ],
+            "name": "TroveManagerOperation",
+            "nodeType": "EnumDefinition",
+            "src": "1594:152:14"
+          },
+          {
+            "canonicalName": "TroveManagerBase.Trove",
+            "id": 2271,
+            "members": [
+              {
+                "constant": false,
+                "id": 2260,
+                "mutability": "mutable",
+                "name": "colls",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2271,
+                "src": "1819:14:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_newColls_$1910_storage_ptr",
+                  "typeString": "struct StabCustomBase.newColls"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2259,
+                  "name": "newColls",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 1910,
+                  "src": "1819:8:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_newColls_$1910_storage_ptr",
+                    "typeString": "struct StabCustomBase.newColls"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2262,
+                "mutability": "mutable",
+                "name": "debt",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2271,
+                "src": "1843:9:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2261,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1843:4:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2266,
+                "mutability": "mutable",
+                "name": "stakes",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2271,
+                "src": "1862:31:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                  "typeString": "mapping(address => uint256)"
+                },
+                "typeName": {
+                  "id": 2265,
+                  "keyType": {
+                    "id": 2263,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1870:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "Mapping",
+                  "src": "1862:24:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                    "typeString": "mapping(address => uint256)"
+                  },
+                  "valueType": {
+                    "id": 2264,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1881:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2268,
+                "mutability": "mutable",
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2271,
+                "src": "1903:13:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Status_$2253",
+                  "typeString": "enum TroveManagerBase.Status"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 2267,
+                  "name": "Status",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 2253,
+                  "src": "1903:6:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Status_$2253",
+                    "typeString": "enum TroveManagerBase.Status"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 2270,
+                "mutability": "mutable",
+                "name": "arrayIndex",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 2271,
+                "src": "1926:18:14",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint128",
+                  "typeString": "uint128"
+                },
+                "typeName": {
+                  "id": 2269,
+                  "name": "uint128",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1926:7:14",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Trove",
+            "nodeType": "StructDefinition",
+            "scope": 2286,
+            "src": "1796:155:14",
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2285,
+            "name": "TroveUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2284,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2273,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_borrower",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2285,
+                  "src": "1977:25:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2272,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1977:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2275,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_debt",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2285,
+                  "src": "2004:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2274,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2004:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2278,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_tokens",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2285,
+                  "src": "2016:17:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 2276,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2016:7:14",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 2277,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2016:9:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2281,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_amounts",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2285,
+                  "src": "2035:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 2279,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2035:4:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 2280,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2035:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2283,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "operation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 2285,
+                  "src": "2052:31:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_TroveManagerOperation_$2258",
+                    "typeString": "enum TroveManagerBase.TroveManagerOperation"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2282,
+                    "name": "TroveManagerOperation",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2258,
+                    "src": "2052:21:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_TroveManagerOperation_$2258",
+                      "typeString": "enum TroveManagerBase.TroveManagerOperation"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1976:108:14"
+            },
+            "src": "1958:127:14"
+          }
+        ],
+        "scope": 2287,
+        "src": "864:1223:14"
+      }
+    ],
+    "src": "40:2047:14"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/Dependencies/TroveManagerBase.sol",
+      "exportedSymbols": {
+        "TroveManagerBase": [
+          2286
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 2208,
+        "name": "PragmaDirective",
+        "src": "40:23:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5734,
+          "absolutePath": "project:/Interfaces/ITroveManager.sol",
+          "file": "../Interfaces/ITroveManager.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2209,
+        "name": "ImportDirective",
+        "src": "65:41:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5109,
+          "absolutePath": "project:/Interfaces/IStabilityPool.sol",
+          "file": "../Interfaces/IStabilityPool.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2210,
+        "name": "ImportDirective",
+        "src": "107:42:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4073,
+          "absolutePath": "project:/Interfaces/ICollSurplusPool.sol",
+          "file": "../Interfaces/ICollSurplusPool.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2211,
+        "name": "ImportDirective",
+        "src": "150:44:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4665,
+          "absolutePath": "project:/Interfaces/ISUSDToken.sol",
+          "file": "../Interfaces/ISUSDToken.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2212,
+        "name": "ImportDirective",
+        "src": "195:38:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4806,
+          "absolutePath": "project:/Interfaces/ISortedTroves.sol",
+          "file": "../Interfaces/ISortedTroves.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2213,
+        "name": "ImportDirective",
+        "src": "234:41:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4606,
+          "absolutePath": "project:/Interfaces/ISTBToken.sol",
+          "file": "../Interfaces/ISTBToken.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2214,
+        "name": "ImportDirective",
+        "src": "276:37:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4585,
+          "absolutePath": "project:/Interfaces/ISTBStaking.sol",
+          "file": "../Interfaces/ISTBStaking.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2215,
+        "name": "ImportDirective",
+        "src": "350:39:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 3780,
+          "absolutePath": "project:/Interfaces/IActivePool.sol",
+          "file": "../Interfaces/IActivePool.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2216,
+        "name": "ImportDirective",
+        "src": "390:39:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5745,
+          "absolutePath": "project:/Interfaces/ITroveManagerLiquidations.sol",
+          "file": "../Interfaces/ITroveManagerLiquidations.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2217,
+        "name": "ImportDirective",
+        "src": "430:53:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5767,
+          "absolutePath": "project:/Interfaces/ITroveManagerRedemptions.sol",
+          "file": "../Interfaces/ITroveManagerRedemptions.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2218,
+        "name": "ImportDirective",
+        "src": "484:52:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 759,
+          "absolutePath": "project:/Dependencies/LiquityBase.sol",
+          "file": "./LiquityBase.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2219,
+        "name": "ImportDirective",
+        "src": "610:27:14"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1124,
+          "absolutePath": "project:/Dependencies/Ownable.sol",
+          "file": "./Ownable.sol",
+          "scope": 2287,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2220,
+        "name": "ImportDirective",
+        "src": "638:23:14"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            347,
+            758,
+            1123,
+            2206,
+            4330
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            2286,
+            1123,
+            758,
+            2206,
+            347,
+            4330
+          ],
+          "name": "TroveManagerBase",
+          "scope": 2287
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " Contains shared functionality of TroveManagerLiquidations, TroveManagerRedemptions, and TroveManager. \n Keeps addresses to cache, events, structs, status, etc. Also keeps Trove struct. "
+            },
+            "id": 2221,
+            "name": "StructuredDocumentation",
+            "src": "663:199:14"
+          },
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "LiquityBase",
+                  "referencedDeclaration": 758,
+                  "type": "contract LiquityBase"
+                },
+                "id": 2222,
+                "name": "UserDefinedTypeName",
+                "src": "893:11:14"
+              }
+            ],
+            "id": 2223,
+            "name": "InheritanceSpecifier",
+            "src": "893:11:14"
+          },
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Ownable",
+                  "referencedDeclaration": 1123,
+                  "type": "contract Ownable"
+                },
+                "id": 2224,
+                "name": "UserDefinedTypeName",
+                "src": "906:7:14"
+              }
+            ],
+            "id": 2225,
+            "name": "InheritanceSpecifier",
+            "src": "906:7:14"
+          },
+          {
+            "attributes": {
+              "canonicalName": "TroveManagerBase.ContractsCache",
+              "name": "ContractsCache",
+              "scope": 2286,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "activePool",
+                  "overrides": null,
+                  "scope": 2240,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "contract IActivePool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "IActivePool",
+                      "referencedDeclaration": 3779,
+                      "type": "contract IActivePool"
+                    },
+                    "id": 2226,
+                    "name": "UserDefinedTypeName",
+                    "src": "1102:11:14"
+                  }
+                ],
+                "id": 2227,
+                "name": "VariableDeclaration",
+                "src": "1102:22:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "defaultPool",
+                  "overrides": null,
+                  "scope": 2240,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "contract IDefaultPool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "IDefaultPool",
+                      "referencedDeclaration": 4165,
+                      "type": "contract IDefaultPool"
+                    },
+                    "id": 2228,
+                    "name": "UserDefinedTypeName",
+                    "src": "1134:12:14"
+                  }
+                ],
+                "id": 2229,
+                "name": "VariableDeclaration",
+                "src": "1134:24:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "susdToken",
+                  "overrides": null,
+                  "scope": 2240,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "contract ISUSDToken",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "ISUSDToken",
+                      "referencedDeclaration": 4664,
+                      "type": "contract ISUSDToken"
+                    },
+                    "id": 2230,
+                    "name": "UserDefinedTypeName",
+                    "src": "1168:10:14"
+                  }
+                ],
+                "id": 2231,
+                "name": "VariableDeclaration",
+                "src": "1168:20:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "sSTB",
+                  "overrides": null,
+                  "scope": 2240,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "contract ISSTB",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "ISSTB",
+                      "referencedDeclaration": 4584,
+                      "type": "contract ISSTB"
+                    },
+                    "id": 2232,
+                    "name": "UserDefinedTypeName",
+                    "src": "1198:5:14"
+                  }
+                ],
+                "id": 2233,
+                "name": "VariableDeclaration",
+                "src": "1198:10:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "sortedTroves",
+                  "overrides": null,
+                  "scope": 2240,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "contract ISortedTroves",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "ISortedTroves",
+                      "referencedDeclaration": 4805,
+                      "type": "contract ISortedTroves"
+                    },
+                    "id": 2234,
+                    "name": "UserDefinedTypeName",
+                    "src": "1218:13:14"
+                  }
+                ],
+                "id": 2235,
+                "name": "VariableDeclaration",
+                "src": "1218:26:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "collSurplusPool",
+                  "overrides": null,
+                  "scope": 2240,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "contract ICollSurplusPool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "ICollSurplusPool",
+                      "referencedDeclaration": 4072,
+                      "type": "contract ICollSurplusPool"
+                    },
+                    "id": 2236,
+                    "name": "UserDefinedTypeName",
+                    "src": "1254:16:14"
+                  }
+                ],
+                "id": 2237,
+                "name": "VariableDeclaration",
+                "src": "1254:32:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "gasPoolAddress",
+                  "overrides": null,
+                  "scope": 2240,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "stateMutability": "nonpayable",
+                      "type": "address"
+                    },
+                    "id": 2238,
+                    "name": "ElementaryTypeName",
+                    "src": "1296:7:14"
+                  }
+                ],
+                "id": 2239,
+                "name": "VariableDeclaration",
+                "src": "1296:22:14"
+              }
+            ],
+            "id": 2240,
+            "name": "StructDefinition",
+            "src": "1070:255:14"
+          },
+          {
+            "attributes": {
+              "canonicalName": "TroveManagerBase.SingleRedemptionValues",
+              "name": "SingleRedemptionValues",
+              "scope": 2286,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "SUSDLot",
+                  "overrides": null,
+                  "scope": 2247,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 2241,
+                    "name": "ElementaryTypeName",
+                    "src": "1371:4:14"
+                  }
+                ],
+                "id": 2242,
+                "name": "VariableDeclaration",
+                "src": "1371:12:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "CollLot",
+                  "overrides": null,
+                  "scope": 2247,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "struct StabCustomBase.newColls",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "newColls",
+                      "referencedDeclaration": 1910,
+                      "type": "struct StabCustomBase.newColls"
+                    },
+                    "id": 2243,
+                    "name": "UserDefinedTypeName",
+                    "src": "1393:8:14"
+                  }
+                ],
+                "id": 2244,
+                "name": "VariableDeclaration",
+                "src": "1393:16:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "cancelledPartial",
+                  "overrides": null,
+                  "scope": 2247,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 2245,
+                    "name": "ElementaryTypeName",
+                    "src": "1419:4:14"
+                  }
+                ],
+                "id": 2246,
+                "name": "VariableDeclaration",
+                "src": "1419:21:14"
+              }
+            ],
+            "id": 2247,
+            "name": "StructDefinition",
+            "src": "1331:116:14"
+          },
+          {
+            "attributes": {
+              "canonicalName": "TroveManagerBase.Status",
+              "name": "Status"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "nonExistent"
+                },
+                "id": 2248,
+                "name": "EnumValue",
+                "src": "1475:11:14"
+              },
+              {
+                "attributes": {
+                  "name": "active"
+                },
+                "id": 2249,
+                "name": "EnumValue",
+                "src": "1496:6:14"
+              },
+              {
+                "attributes": {
+                  "name": "closedByOwner"
+                },
+                "id": 2250,
+                "name": "EnumValue",
+                "src": "1512:13:14"
+              },
+              {
+                "attributes": {
+                  "name": "closedByLiquidation"
+                },
+                "id": 2251,
+                "name": "EnumValue",
+                "src": "1535:19:14"
+              },
+              {
+                "attributes": {
+                  "name": "closedByRedemption"
+                },
+                "id": 2252,
+                "name": "EnumValue",
+                "src": "1564:18:14"
+              }
+            ],
+            "id": 2253,
+            "name": "EnumDefinition",
+            "src": "1453:135:14"
+          },
+          {
+            "attributes": {
+              "canonicalName": "TroveManagerBase.TroveManagerOperation",
+              "name": "TroveManagerOperation"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "applyPendingRewards"
+                },
+                "id": 2254,
+                "name": "EnumValue",
+                "src": "1631:19:14"
+              },
+              {
+                "attributes": {
+                  "name": "liquidateInNormalMode"
+                },
+                "id": 2255,
+                "name": "EnumValue",
+                "src": "1660:21:14"
+              },
+              {
+                "attributes": {
+                  "name": "liquidateInRecoveryMode"
+                },
+                "id": 2256,
+                "name": "EnumValue",
+                "src": "1691:23:14"
+              },
+              {
+                "attributes": {
+                  "name": "redeemCollateral"
+                },
+                "id": 2257,
+                "name": "EnumValue",
+                "src": "1724:16:14"
+              }
+            ],
+            "id": 2258,
+            "name": "EnumDefinition",
+            "src": "1594:152:14"
+          },
+          {
+            "attributes": {
+              "canonicalName": "TroveManagerBase.Trove",
+              "name": "Trove",
+              "scope": 2286,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "colls",
+                  "overrides": null,
+                  "scope": 2271,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "struct StabCustomBase.newColls",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "newColls",
+                      "referencedDeclaration": 1910,
+                      "type": "struct StabCustomBase.newColls"
+                    },
+                    "id": 2259,
+                    "name": "UserDefinedTypeName",
+                    "src": "1819:8:14"
+                  }
+                ],
+                "id": 2260,
+                "name": "VariableDeclaration",
+                "src": "1819:14:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "debt",
+                  "overrides": null,
+                  "scope": 2271,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 2261,
+                    "name": "ElementaryTypeName",
+                    "src": "1843:4:14"
+                  }
+                ],
+                "id": 2262,
+                "name": "VariableDeclaration",
+                "src": "1843:9:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "stakes",
+                  "overrides": null,
+                  "scope": 2271,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "mapping(address => uint256)",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "mapping(address => uint256)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 2263,
+                        "name": "ElementaryTypeName",
+                        "src": "1870:7:14"
+                      },
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2264,
+                        "name": "ElementaryTypeName",
+                        "src": "1881:4:14"
+                      }
+                    ],
+                    "id": 2265,
+                    "name": "Mapping",
+                    "src": "1862:24:14"
+                  }
+                ],
+                "id": 2266,
+                "name": "VariableDeclaration",
+                "src": "1862:31:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "status",
+                  "overrides": null,
+                  "scope": 2271,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "enum TroveManagerBase.Status",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Status",
+                      "referencedDeclaration": 2253,
+                      "type": "enum TroveManagerBase.Status"
+                    },
+                    "id": 2267,
+                    "name": "UserDefinedTypeName",
+                    "src": "1903:6:14"
+                  }
+                ],
+                "id": 2268,
+                "name": "VariableDeclaration",
+                "src": "1903:13:14"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "arrayIndex",
+                  "overrides": null,
+                  "scope": 2271,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint128",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint128",
+                      "type": "uint128"
+                    },
+                    "id": 2269,
+                    "name": "ElementaryTypeName",
+                    "src": "1926:7:14"
+                  }
+                ],
+                "id": 2270,
+                "name": "VariableDeclaration",
+                "src": "1926:18:14"
+              }
+            ],
+            "id": 2271,
+            "name": "StructDefinition",
+            "src": "1796:155:14"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "TroveUpdated"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "mutability": "mutable",
+                      "name": "_borrower",
+                      "overrides": null,
+                      "scope": 2285,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2272,
+                        "name": "ElementaryTypeName",
+                        "src": "1977:7:14"
+                      }
+                    ],
+                    "id": 2273,
+                    "name": "VariableDeclaration",
+                    "src": "1977:25:14"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_debt",
+                      "overrides": null,
+                      "scope": 2285,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 2274,
+                        "name": "ElementaryTypeName",
+                        "src": "2004:4:14"
+                      }
+                    ],
+                    "id": 2275,
+                    "name": "VariableDeclaration",
+                    "src": "2004:10:14"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_tokens",
+                      "overrides": null,
+                      "scope": 2285,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "address[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 2276,
+                            "name": "ElementaryTypeName",
+                            "src": "2016:7:14"
+                          }
+                        ],
+                        "id": 2277,
+                        "name": "ArrayTypeName",
+                        "src": "2016:9:14"
+                      }
+                    ],
+                    "id": 2278,
+                    "name": "VariableDeclaration",
+                    "src": "2016:17:14"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_amounts",
+                      "overrides": null,
+                      "scope": 2285,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "uint256[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint",
+                              "type": "uint256"
+                            },
+                            "id": 2279,
+                            "name": "ElementaryTypeName",
+                            "src": "2035:4:14"
+                          }
+                        ],
+                        "id": 2280,
+                        "name": "ArrayTypeName",
+                        "src": "2035:6:14"
+                      }
+                    ],
+                    "id": 2281,
+                    "name": "VariableDeclaration",
+                    "src": "2035:15:14"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "operation",
+                      "overrides": null,
+                      "scope": 2285,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "enum TroveManagerBase.TroveManagerOperation",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "TroveManagerOperation",
+                          "referencedDeclaration": 2258,
+                          "type": "enum TroveManagerBase.TroveManagerOperation"
+                        },
+                        "id": 2282,
+                        "name": "UserDefinedTypeName",
+                        "src": "2052:21:14"
+                      }
+                    ],
+                    "id": 2283,
+                    "name": "VariableDeclaration",
+                    "src": "2052:31:14"
+                  }
+                ],
+                "id": 2284,
+                "name": "ParameterList",
+                "src": "1976:108:14"
+              }
+            ],
+            "id": 2285,
+            "name": "EventDefinition",
+            "src": "1958:127:14"
+          }
+        ],
+        "id": 2286,
+        "name": "ContractDefinition",
+        "src": "864:1223:14"
+      }
+    ],
+    "id": 2287,
+    "name": "SourceUnit",
+    "src": "40:2047:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.732Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "isOwner()": {
+        "details": "Returns true if the caller is the current owner."
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Contains shared functionality of TroveManagerLiquidations, TroveManagerRedemptions, and TroveManager.  Keeps addresses to cache, events, structs, status, etc. Also keeps Trove struct. ",
+    "version": 1
+  }
+}

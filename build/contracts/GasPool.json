@@ -1,0 +1,138 @@
+{
+  "contractName": "GasPool",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"The purpose of this contract is to hold YUSD tokens for gas compensation: https://github.com/liquity/dev#gas-compensation When a borrower opens a trove, an additional 50 YUSD debt is issued, and 50 YUSD is minted and sent to this contract. When a borrower closes their active trove, this gas compensation is refunded: 50 YUSD is burned from the this contract's balance, and the corresponding 50 YUSD debt on the trove is cancelled. See this issue for more context: https://github.com/liquity/dev/issues/186\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/GasPool.sol\":\"GasPool\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/GasPool.sol\":{\"keccak256\":\"0xbc8a08d364a47f44d598f4786fca6f818b41e02dd8d90589aa8c4d9caf356daf\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://040749518242c25038783f2866d463b6eaecaaa21ca64f1a1627be2218943379\",\"dweb:/ipfs/QmYU8kkeHhvqui8qckZJoRrHYR25R7unAWKnEUTaL7281p\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220835c054539b4245486c093409f008042d96a2229a9e3fb6bbaa1ee42af834fad64736f6c634300060b0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220835c054539b4245486c093409f008042d96a2229a9e3fb6bbaa1ee42af834fad64736f6c634300060b0033",
+  "immutableReferences": {},
+  "sourceMap": "605:115:46:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "605:115:46:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\n\n/**\n * The purpose of this contract is to hold YUSD tokens for gas compensation:\n * https://github.com/liquity/dev#gas-compensation\n * When a borrower opens a trove, an additional 50 YUSD debt is issued,\n * and 50 YUSD is minted and sent to this contract.\n * When a borrower closes their active trove, this gas compensation is refunded:\n * 50 YUSD is burned from the this contract's balance, and the corresponding\n * 50 YUSD debt on the trove is cancelled.\n * See this issue for more context: https://github.com/liquity/dev/issues/186\n */\ncontract GasPool {\n    // do nothing, as the core contracts have permission to send to and burn from this address\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/contracts/GasPool.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/GasPool.sol",
+    "exportedSymbols": {
+      "GasPool": [
+        10976
+      ]
+    },
+    "id": 10977,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10974,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:46"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 10975,
+          "nodeType": "StructuredDocumentation",
+          "src": "66:538:46",
+          "text": " The purpose of this contract is to hold YUSD tokens for gas compensation:\n https://github.com/liquity/dev#gas-compensation\n When a borrower opens a trove, an additional 50 YUSD debt is issued,\n and 50 YUSD is minted and sent to this contract.\n When a borrower closes their active trove, this gas compensation is refunded:\n 50 YUSD is burned from the this contract's balance, and the corresponding\n 50 YUSD debt on the trove is cancelled.\n See this issue for more context: https://github.com/liquity/dev/issues/186"
+        },
+        "fullyImplemented": true,
+        "id": 10976,
+        "linearizedBaseContracts": [
+          10976
+        ],
+        "name": "GasPool",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 10977,
+        "src": "605:115:46"
+      }
+    ],
+    "src": "40:680:46"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/GasPool.sol",
+      "exportedSymbols": {
+        "GasPool": [
+          10976
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 10974,
+        "name": "PragmaDirective",
+        "src": "40:23:46"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            10976
+          ],
+          "name": "GasPool",
+          "nodes": [
+            null
+          ],
+          "scope": 10977
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": " The purpose of this contract is to hold YUSD tokens for gas compensation:\n https://github.com/liquity/dev#gas-compensation\n When a borrower opens a trove, an additional 50 YUSD debt is issued,\n and 50 YUSD is minted and sent to this contract.\n When a borrower closes their active trove, this gas compensation is refunded:\n 50 YUSD is burned from the this contract's balance, and the corresponding\n 50 YUSD debt on the trove is cancelled.\n See this issue for more context: https://github.com/liquity/dev/issues/186"
+            },
+            "id": 10975,
+            "name": "StructuredDocumentation",
+            "src": "66:538:46"
+          }
+        ],
+        "id": 10976,
+        "name": "ContractDefinition",
+        "src": "605:115:46"
+      }
+    ],
+    "id": 10977,
+    "name": "SourceUnit",
+    "src": "40:680:46"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.800Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "The purpose of this contract is to hold YUSD tokens for gas compensation: https://github.com/liquity/dev#gas-compensation When a borrower opens a trove, an additional 50 YUSD debt is issued, and 50 YUSD is minted and sent to this contract. When a borrower closes their active trove, this gas compensation is refunded: 50 YUSD is burned from the this contract's balance, and the corresponding 50 YUSD debt on the trove is cancelled. See this issue for more context: https://github.com/liquity/dev/issues/186",
+    "version": 1
+  }
+}

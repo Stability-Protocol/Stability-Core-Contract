@@ -1,0 +1,351 @@
+{
+  "contractName": "ITroveManagerLiquidations",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_troveArray",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address",
+          "name": "_liquidator",
+          "type": "address"
+        }
+      ],
+      "name": "batchLiquidateTroves",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_troveArray\",\"type\":\"address[]\"},{\"internalType\":\"address\",\"name\":\"_liquidator\",\"type\":\"address\"}],\"name\":\"batchLiquidateTroves\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/Interfaces/ITroveManagerLiquidations.sol\":\"ITroveManagerLiquidations\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Interfaces/ITroveManagerLiquidations.sol\":{\"keccak256\":\"0x8768a07f20bf2dac4fb43a3b285ea514be4590407429069485d3450be38fbe3e\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://ae4c033ec5979be2ba0f851dd36875f537f3099b2176c96b75c0e6eb8bd00ef3\",\"dweb:/ipfs/QmWrCKcg5KMRCC2WjZFRsAj7W1RtHXxFNjq9fdo3i57jHC\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\n\ninterface ITroveManagerLiquidations {\n    function batchLiquidateTroves(address[] memory _troveArray, address _liquidator) external;\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/Interfaces/ITroveManagerLiquidations.sol",
+  "ast": {
+    "absolutePath": "project:/Interfaces/ITroveManagerLiquidations.sol",
+    "exportedSymbols": {
+      "ITroveManagerLiquidations": [
+        5744
+      ]
+    },
+    "id": 5745,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5735,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:37"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5744,
+        "linearizedBaseContracts": [
+          5744
+        ],
+        "name": "ITroveManagerLiquidations",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "e369e4ab",
+            "id": 5743,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "batchLiquidateTroves",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5741,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5738,
+                  "mutability": "mutable",
+                  "name": "_troveArray",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5743,
+                  "src": "138:28:37",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 5736,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "138:7:37",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 5737,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "138:9:37",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5740,
+                  "mutability": "mutable",
+                  "name": "_liquidator",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5743,
+                  "src": "168:19:37",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5739,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "168:7:37",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "137:51:37"
+            },
+            "returnParameters": {
+              "id": 5742,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "197:0:37"
+            },
+            "scope": 5744,
+            "src": "108:90:37",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5745,
+        "src": "66:134:37"
+      }
+    ],
+    "src": "40:160:37"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/Interfaces/ITroveManagerLiquidations.sol",
+      "exportedSymbols": {
+        "ITroveManagerLiquidations": [
+          5744
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 5735,
+        "name": "PragmaDirective",
+        "src": "40:23:37"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            5744
+          ],
+          "name": "ITroveManagerLiquidations",
+          "scope": 5745
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "e369e4ab",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "batchLiquidateTroves",
+              "overrides": null,
+              "scope": 5744,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_troveArray",
+                      "overrides": null,
+                      "scope": 5743,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "address[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "address[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 5736,
+                            "name": "ElementaryTypeName",
+                            "src": "138:7:37"
+                          }
+                        ],
+                        "id": 5737,
+                        "name": "ArrayTypeName",
+                        "src": "138:9:37"
+                      }
+                    ],
+                    "id": 5738,
+                    "name": "VariableDeclaration",
+                    "src": "138:28:37"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_liquidator",
+                      "overrides": null,
+                      "scope": 5743,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5739,
+                        "name": "ElementaryTypeName",
+                        "src": "168:7:37"
+                      }
+                    ],
+                    "id": 5740,
+                    "name": "VariableDeclaration",
+                    "src": "168:19:37"
+                  }
+                ],
+                "id": 5741,
+                "name": "ParameterList",
+                "src": "137:51:37"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 5742,
+                "name": "ParameterList",
+                "src": "197:0:37"
+              }
+            ],
+            "id": 5743,
+            "name": "FunctionDefinition",
+            "src": "108:90:37"
+          }
+        ],
+        "id": 5744,
+        "name": "ContractDefinition",
+        "src": "66:134:37"
+      }
+    ],
+    "id": 5745,
+    "name": "SourceUnit",
+    "src": "40:160:37"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.766Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

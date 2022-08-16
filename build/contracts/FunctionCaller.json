@@ -1,0 +1,2898 @@
+{
+  "contractName": "FunctionCaller",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "priceFeedAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sortedTrovesAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "troveManagerAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_troveManagerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setTroveManagerAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_sortedTrovesAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setSortedTrovesAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_priceFeedAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setPriceFeedAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_address",
+          "type": "address"
+        }
+      ],
+      "name": "troveManager_getCurrentICR",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_ICR",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_prevId",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_nextId",
+          "type": "address"
+        }
+      ],
+      "name": "sortedTroves_findInsertPosition",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"priceFeedAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_priceFeedAddress\",\"type\":\"address\"}],\"name\":\"setPriceFeedAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sortedTrovesAddress\",\"type\":\"address\"}],\"name\":\"setSortedTrovesAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_troveManagerAddress\",\"type\":\"address\"}],\"name\":\"setTroveManagerAddress\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"sortedTrovesAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_ICR\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_prevId\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_nextId\",\"type\":\"address\"}],\"name\":\"sortedTroves_findInsertPosition\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"troveManagerAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"troveManager_getCurrentICR\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/FunctionCaller.sol\":\"FunctionCaller\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Dependencies/LiquityMath.sol\":{\"keccak256\":\"0x2b37a723a6da45691f6a7f95a90b715676252f79d8abd2eb53010688bae00c21\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6e13f5757363ad457fa87638a58e3677165b2c44873fd4e4ebb231524d0b96ed\",\"dweb:/ipfs/QmThqh3y6nWuv6C4QBPAVYpNw9Y9dCGw3mZYTz8omeGPES\"]},\"project:/Dependencies/SafeMath.sol\":{\"keccak256\":\"0xae986c5acf308d03cf60b894b2b037cb23c8b59d1b8aba5ba3c0ae74df9b8ffd\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://23f68c5ba4b24f20a3944ce04e83ac0538d1711d2bc774ab06f5b984b7b8bb48\",\"dweb:/ipfs/QmTL6F7NFzQfjEuepJcgG38SMgBghFH3JxYp4ZKFg9B9Mo\"]},\"project:/Interfaces/IActivePool.sol\":{\"keccak256\":\"0xa2f764de15c2049f669750c476acd32a3567c110343ad7465a7a6e22ec466d18\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://dc910fec109a7708e0b07517a5584f01cb9b08404383e78af8e4ab58b31dadc6\",\"dweb:/ipfs/QmZzqsPgsib2V19LpB6EvAGqAnLn1LfJaRPhwSRdSKo3NA\"]},\"project:/Interfaces/ICollateralReceiver.sol\":{\"keccak256\":\"0xb8944ce690ca2edd6b9f24e0a506d0d308678f7a8e42e64c12b29661ef6a16eb\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://902f6a77e68499b5d16c0dcdff5f6703e25a47ee20f7019e24552c11b0d99a37\",\"dweb:/ipfs/QmXXj9CxZW9AWyxnXNqAcTuUpXxtQCv78UuvFqY1UZbDmM\"]},\"project:/Interfaces/IDefaultPool.sol\":{\"keccak256\":\"0x04b50731f08f7fd1cef4a740d8da34dbfc60a2f4fec11d60d31f1822afad079e\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://1a12cde1fb21588a188ee274c18e89c1004ce9638f9ca7867060c1540c97d2a7\",\"dweb:/ipfs/QmQbYC5RxESWNgPkXiZQdYAx293NTRFnPRXbrSuVf3dTEi\"]},\"project:/Interfaces/IERC20.sol\":{\"keccak256\":\"0xe53e56d1b6b10618f5132181442c94ede7208b0d3aea2323e96cbd162e9c68c3\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://2053a2c6e4ad9090683e085184c00ea043483a2cfdccefca4b36340e48d5c9a9\",\"dweb:/ipfs/QmW5SuxbPktAxMGEv1QqbEA9EP7fUTbu8np2zsf5EKNavH\"]},\"project:/Interfaces/IERC2612.sol\":{\"keccak256\":\"0x40c2781d243fa5c375dceb4062e478b3182d47726f212ca9931109933a42aec7\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://5fd86d68bbef8239ebb31b111ba1e1111ba3db79faf9ec4aa987b036d9b92bea\",\"dweb:/ipfs/QmTiCeVdNKLL8MURVRxe6VeLTbeob8H8PL1LaUtc4NfpxA\"]},\"project:/Interfaces/ILiquityBase.sol\":{\"keccak256\":\"0x817a1416164e60eda90fcc6b0756506314b47663f523f4f5611118d7d52c50b5\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://c05a46d0e74b81b60a66a510aae76b9eb9b1d601d3dd43b188cbe13282364a87\",\"dweb:/ipfs/QmdgUUB7GxGpXAYMeFsBYD21SbpsG8wJCuPQSHjUXsJQL2\"]},\"project:/Interfaces/IPool.sol\":{\"keccak256\":\"0x213057a1ba72d4cbcb4dba8d57d6010b55b2484fce66f95f7020c8e9af50e6ec\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://e368ca44b05c3cb287425db2c342ce7dff7927f854e361c6477f9e7fcba7b72d\",\"dweb:/ipfs/QmQpqw3qkHg4wWovKUtVJ4gY6n6ex9SJjhVjJK3NRhZAnr\"]},\"project:/Interfaces/IPriceFeed.sol\":{\"keccak256\":\"0xf81e74e87004ff2ffb5e70ac4dd2544f82894a9eaac06f32e395dd0821882c1c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://9057703d013737b50d4de7c1f871966d85bf90e801a48fa284740652140866b9\",\"dweb:/ipfs/QmavqaTbGZsR2tFDWRVDd6Pgj2o8SUMT7YfpVunnEfdsKZ\"]},\"project:/Interfaces/ISTBStaking.sol\":{\"keccak256\":\"0x0f8a6016167fa5f285d3d719c58a4357da00a81ed18a68a8f211ce7a786c8bff\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6c22fc5834bcbfa3386754bda9d79139491216fdfc4692ddcab037e36b6f90f5\",\"dweb:/ipfs/QmRjdM7LFvH92LdkqkE7FbUDoZcGGTK8f2YEsKmjPv6dg3\"]},\"project:/Interfaces/ISTBToken.sol\":{\"keccak256\":\"0x2519316fe4ebbf06239ad329e2f0040ec6965ac0b1cb0ba96d512804a9d3d256\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://5102d24394130e82988faaf34226f2a702a0df2dbeff7427f6c7aa5fffe93b91\",\"dweb:/ipfs/Qmb8JXNcreJ6i5WjhZ11UpyymhZpvRJKqHwWE99sCi9yua\"]},\"project:/Interfaces/ISUSDToken.sol\":{\"keccak256\":\"0x71c03cb2d43c85ea1152ff8beea7f8e466c24b1ef25f14fce0b1dd74f89f3da6\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6f0c0d91c7ec1c6bdbdd104aa9ec71af2f24f1a9dda7b14b63d2c9aaeb9ec99d\",\"dweb:/ipfs/QmRMSRPYv75U9iZVc5FK1GpPPyDveg4DuHdutuExSnQpi3\"]},\"project:/Interfaces/ISortedTroves.sol\":{\"keccak256\":\"0x3580ed12d898fe2cf084ba01f623bdc14dbb231f23487558346299031d3c7e36\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://04447e41f285eade7028cb1d1191b8b35d3ecd1af6923440229f4455e222c5f9\",\"dweb:/ipfs/QmV496nyBYhzqk2bFJxeKTnyDJfaWLATYqQtWbLeMaYQT6\"]},\"project:/Interfaces/IStabilityPool.sol\":{\"keccak256\":\"0x06ee1ab7b6113f9f0cafadec67cd4501fed65c3e7f146e05d9f789f8f676ddb6\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://bc525d3f6132d69f5b3b26aaa42083a21c58138bb61e8470020b70645886253e\",\"dweb:/ipfs/QmXP55Y6j9L2xvKkZJrFgfZaQsY5uMVbfKqCPD5CYCg2rc\"]},\"project:/Interfaces/ITroveManager.sol\":{\"keccak256\":\"0x8d8728182e940ed01ac6333705bbb17632d5b825bc0a98707b25f1ada96b643d\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://1ada6bb390ade02a4491e1e1e48e1683e3a54631dcfe3bda9c94e85919825803\",\"dweb:/ipfs/QmSNUhwcyAckBvizLHK5jH7TDGRvbu4BwnaWXLGaTw9BT4\"]},\"project:/contracts/FunctionCaller.sol\":{\"keccak256\":\"0xff2c6079319a3e4bb897a48df00afdf7563f2bc0005deaf9b2b794ef2a74e67b\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://520c39903291d098250d4dda228697d3614851e6bc0c5dff994d490699a1dfd4\",\"dweb:/ipfs/QmX3Y2gSttx3iiXMnxssAUwtbGxQZhBACYZg4ZEsvhkF8B\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506107b5806100206000396000f3fe608060405234801561001057600080fd5b50600436106100875760003560e01c8063a06dec711161005b578063a06dec71146101bc578063ced2027c14610200578063dcc6710f14610244578063e0abca0b1461032557610087565b8062cf5db41461008c5780632caffa81146100d05780635a4d28bb1461011a578063753d3e5e14610164575b600080fd5b6100ce600480360360208110156100a257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061036f565b005b6100d86103f4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61012261041a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101a66004803603602081101561017a57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610440565b6040518082815260200191505060405180910390f35b6101fe600480360360208110156101d257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610522565b005b6102426004803603602081101561021657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105a7565b005b6102b06004803603606081101561025a57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061062b565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390f35b61032d610759565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b80600560006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166327fb7d89836040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b1580156104e057600080fd5b505afa1580156104f4573d6000803e3d6000fd5b505050506040513d602081101561050a57600080fd5b81019080805190602001909291905050509050919050565b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600080600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663416980dc8686866040518463ffffffff1660e01b8152600401808481526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050604080518083038186803b15801561070857600080fd5b505afa15801561071c573d6000803e3d6000fd5b505050506040513d604081101561073257600080fd5b81019080805190602001909291908051906020019092919050505091509150935093915050565b600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea2646970667358221220baf937cfd9b3e4a4331fcf0f91872bd5bb07e4f6386ec1bcbf5526786d8b512264736f6c634300060b0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100875760003560e01c8063a06dec711161005b578063a06dec71146101bc578063ced2027c14610200578063dcc6710f14610244578063e0abca0b1461032557610087565b8062cf5db41461008c5780632caffa81146100d05780635a4d28bb1461011a578063753d3e5e14610164575b600080fd5b6100ce600480360360208110156100a257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061036f565b005b6100d86103f4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61012261041a565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101a66004803603602081101561017a57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610440565b6040518082815260200191505060405180910390f35b6101fe600480360360208110156101d257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610522565b005b6102426004803603602081101561021657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105a7565b005b6102b06004803603606081101561025a57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061062b565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390f35b61032d610759565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b80600560006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166327fb7d89836040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b1580156104e057600080fd5b505afa1580156104f4573d6000803e3d6000fd5b505050506040513d602081101561050a57600080fd5b81019080805190602001909291905050509050919050565b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b600080600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663416980dc8686866040518463ffffffff1660e01b8152600401808481526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019350505050604080518083038186803b15801561070857600080fd5b505afa15801561071c573d6000803e3d6000fd5b505050506040513d604081101561073257600080fd5b81019080805190602001909291908051906020019092919050505091509150935093915050565b600560009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea2646970667358221220baf937cfd9b3e4a4331fcf0f91872bd5bb07e4f6386ec1bcbf5526786d8b512264736f6c634300060b0033",
+  "immutableReferences": {},
+  "sourceMap": "352:1268:45:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "352:1268:45:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1020:169;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;488:34;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;415;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1263:143;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;824:190;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;628;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1412:206;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;555:31;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1020:169;1114:17;1095:16;;:36;;;;;;;;;;;;;;;;;;1164:17;1141:9;;:41;;;;;;;;;;;;;;;;;;1020:169;:::o;488:34::-;;;;;;;;;;;;;:::o;415:::-;;;;;;;;;;;;;:::o;1263:143::-;1340:4;1363:12;;;;;;;;;;;:26;;;1390:8;1363:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1356:43;;1263:143;;;:::o;824:190::-;927:20;905:19;;:42;;;;;;;;;;;;;;;;;;986:20;957:12;;:50;;;;;;;;;;;;;;;;;;824:190;:::o;628:::-;731:20;709:19;;:42;;;;;;;;;;;;;;;;;;790:20;761:12;;:50;;;;;;;;;;;;;;;;;;628:190;:::o;1412:206::-;1521:7;1530;1556:12;;;;;;;;;;;:31;;;1588:4;1594:7;1603;1556:55;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1549:62;;;;1412:206;;;;;;:::o;555:31::-;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\nimport '../Interfaces/ITroveManager.sol';\nimport '../Interfaces/ISortedTroves.sol';\nimport '../Interfaces/IPriceFeed.sol';\nimport '../Dependencies/LiquityMath.sol';\n\n/* Wrapper contract - used for calculating gas of read-only and internal functions.\nNot part of the Yeti application. */\ncontract FunctionCaller {\n\n    ITroveManager troveManager;\n    address public troveManagerAddress;\n\n    ISortedTroves sortedTroves;\n    address public sortedTrovesAddress;\n\n    IPriceFeed priceFeed;\n    address public priceFeedAddress;\n\n    // --- Dependency setters ---\n\n    function setTroveManagerAddress(address _troveManagerAddress) external {\n        troveManagerAddress = _troveManagerAddress;\n        troveManager = ITroveManager(_troveManagerAddress);\n    }\n\n    function setSortedTrovesAddress(address _sortedTrovesAddress) external {\n        troveManagerAddress = _sortedTrovesAddress;\n        sortedTroves = ISortedTroves(_sortedTrovesAddress);\n    }\n\n    function setPriceFeedAddress(address _priceFeedAddress) external {\n        priceFeedAddress = _priceFeedAddress;\n        priceFeed = IPriceFeed(_priceFeedAddress);\n    }\n\n    // --- Non-view wrapper functions used for calculating gas ---\n\n    function troveManager_getCurrentICR(address _address) external view returns (uint) {\n        return troveManager.getCurrentICR(_address);\n    }\n\n    function sortedTroves_findInsertPosition(uint _ICR, address _prevId, address _nextId) external view returns (address, address) {\n        return sortedTroves.findInsertPosition(_ICR, _prevId, _nextId);\n    }\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/contracts/FunctionCaller.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/FunctionCaller.sol",
+    "exportedSymbols": {
+      "FunctionCaller": [
+        10972
+      ]
+    },
+    "id": 10973,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10873,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:45"
+      },
+      {
+        "absolutePath": "project:/Interfaces/ITroveManager.sol",
+        "file": "../Interfaces/ITroveManager.sol",
+        "id": 10874,
+        "nodeType": "ImportDirective",
+        "scope": 10973,
+        "sourceUnit": 5734,
+        "src": "65:41:45",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/ISortedTroves.sol",
+        "file": "../Interfaces/ISortedTroves.sol",
+        "id": 10875,
+        "nodeType": "ImportDirective",
+        "scope": 10973,
+        "sourceUnit": 4806,
+        "src": "107:41:45",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Interfaces/IPriceFeed.sol",
+        "file": "../Interfaces/IPriceFeed.sol",
+        "id": 10876,
+        "nodeType": "ImportDirective",
+        "scope": 10973,
+        "sourceUnit": 4495,
+        "src": "149:38:45",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/Dependencies/LiquityMath.sol",
+        "file": "../Dependencies/LiquityMath.sol",
+        "id": 10877,
+        "nodeType": "ImportDirective",
+        "scope": 10973,
+        "sourceUnit": 988,
+        "src": "188:41:45",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 10972,
+        "linearizedBaseContracts": [
+          10972
+        ],
+        "name": "FunctionCaller",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 10879,
+            "mutability": "mutable",
+            "name": "troveManager",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 10972,
+            "src": "383:26:45",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ITroveManager_$5733",
+              "typeString": "contract ITroveManager"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 10878,
+              "name": "ITroveManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5733,
+              "src": "383:13:45",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ITroveManager_$5733",
+                "typeString": "contract ITroveManager"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "functionSelector": "5a4d28bb",
+            "id": 10881,
+            "mutability": "mutable",
+            "name": "troveManagerAddress",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 10972,
+            "src": "415:34:45",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 10880,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "415:7:45",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10883,
+            "mutability": "mutable",
+            "name": "sortedTroves",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 10972,
+            "src": "456:26:45",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ISortedTroves_$4805",
+              "typeString": "contract ISortedTroves"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 10882,
+              "name": "ISortedTroves",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4805,
+              "src": "456:13:45",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ISortedTroves_$4805",
+                "typeString": "contract ISortedTroves"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "functionSelector": "2caffa81",
+            "id": 10885,
+            "mutability": "mutable",
+            "name": "sortedTrovesAddress",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 10972,
+            "src": "488:34:45",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 10884,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "488:7:45",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10887,
+            "mutability": "mutable",
+            "name": "priceFeed",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 10972,
+            "src": "529:20:45",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IPriceFeed_$4494",
+              "typeString": "contract IPriceFeed"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 10886,
+              "name": "IPriceFeed",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4494,
+              "src": "529:10:45",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IPriceFeed_$4494",
+                "typeString": "contract IPriceFeed"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "functionSelector": "e0abca0b",
+            "id": 10889,
+            "mutability": "mutable",
+            "name": "priceFeedAddress",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 10972,
+            "src": "555:31:45",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 10888,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "555:7:45",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 10904,
+              "nodeType": "Block",
+              "src": "699:119:45",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10896,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10894,
+                      "name": "troveManagerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10881,
+                      "src": "709:19:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 10895,
+                      "name": "_troveManagerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10891,
+                      "src": "731:20:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "709:42:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 10897,
+                  "nodeType": "ExpressionStatement",
+                  "src": "709:42:45"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10902,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10898,
+                      "name": "troveManager",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10879,
+                      "src": "761:12:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ITroveManager_$5733",
+                        "typeString": "contract ITroveManager"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 10900,
+                          "name": "_troveManagerAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10891,
+                          "src": "790:20:45",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 10899,
+                        "name": "ITroveManager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5733,
+                        "src": "776:13:45",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ITroveManager_$5733_$",
+                          "typeString": "type(contract ITroveManager)"
+                        }
+                      },
+                      "id": 10901,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "776:35:45",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ITroveManager_$5733",
+                        "typeString": "contract ITroveManager"
+                      }
+                    },
+                    "src": "761:50:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ITroveManager_$5733",
+                      "typeString": "contract ITroveManager"
+                    }
+                  },
+                  "id": 10903,
+                  "nodeType": "ExpressionStatement",
+                  "src": "761:50:45"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "ced2027c",
+            "id": 10905,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setTroveManagerAddress",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 10892,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10891,
+                  "mutability": "mutable",
+                  "name": "_troveManagerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10905,
+                  "src": "660:28:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10890,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "660:7:45",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "659:30:45"
+            },
+            "returnParameters": {
+              "id": 10893,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "699:0:45"
+            },
+            "scope": 10972,
+            "src": "628:190:45",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10920,
+              "nodeType": "Block",
+              "src": "895:119:45",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10912,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10910,
+                      "name": "troveManagerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10881,
+                      "src": "905:19:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 10911,
+                      "name": "_sortedTrovesAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10907,
+                      "src": "927:20:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "905:42:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 10913,
+                  "nodeType": "ExpressionStatement",
+                  "src": "905:42:45"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10918,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10914,
+                      "name": "sortedTroves",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10883,
+                      "src": "957:12:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ISortedTroves_$4805",
+                        "typeString": "contract ISortedTroves"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 10916,
+                          "name": "_sortedTrovesAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10907,
+                          "src": "986:20:45",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 10915,
+                        "name": "ISortedTroves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4805,
+                        "src": "972:13:45",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ISortedTroves_$4805_$",
+                          "typeString": "type(contract ISortedTroves)"
+                        }
+                      },
+                      "id": 10917,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "972:35:45",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ISortedTroves_$4805",
+                        "typeString": "contract ISortedTroves"
+                      }
+                    },
+                    "src": "957:50:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISortedTroves_$4805",
+                      "typeString": "contract ISortedTroves"
+                    }
+                  },
+                  "id": 10919,
+                  "nodeType": "ExpressionStatement",
+                  "src": "957:50:45"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "a06dec71",
+            "id": 10921,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setSortedTrovesAddress",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 10908,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10907,
+                  "mutability": "mutable",
+                  "name": "_sortedTrovesAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10921,
+                  "src": "856:28:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10906,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "856:7:45",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "855:30:45"
+            },
+            "returnParameters": {
+              "id": 10909,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "895:0:45"
+            },
+            "scope": 10972,
+            "src": "824:190:45",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10936,
+              "nodeType": "Block",
+              "src": "1085:104:45",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10928,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10926,
+                      "name": "priceFeedAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10889,
+                      "src": "1095:16:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 10927,
+                      "name": "_priceFeedAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10923,
+                      "src": "1114:17:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1095:36:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 10929,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1095:36:45"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10934,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10930,
+                      "name": "priceFeed",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10887,
+                      "src": "1141:9:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IPriceFeed_$4494",
+                        "typeString": "contract IPriceFeed"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 10932,
+                          "name": "_priceFeedAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10923,
+                          "src": "1164:17:45",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 10931,
+                        "name": "IPriceFeed",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4494,
+                        "src": "1153:10:45",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_IPriceFeed_$4494_$",
+                          "typeString": "type(contract IPriceFeed)"
+                        }
+                      },
+                      "id": 10933,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1153:29:45",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IPriceFeed_$4494",
+                        "typeString": "contract IPriceFeed"
+                      }
+                    },
+                    "src": "1141:41:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IPriceFeed_$4494",
+                      "typeString": "contract IPriceFeed"
+                    }
+                  },
+                  "id": 10935,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1141:41:45"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "00cf5db4",
+            "id": 10937,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setPriceFeedAddress",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 10924,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10923,
+                  "mutability": "mutable",
+                  "name": "_priceFeedAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10937,
+                  "src": "1049:25:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10922,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1049:7:45",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1048:27:45"
+            },
+            "returnParameters": {
+              "id": 10925,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1085:0:45"
+            },
+            "scope": 10972,
+            "src": "1020:169:45",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10949,
+              "nodeType": "Block",
+              "src": "1346:60:45",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 10946,
+                        "name": "_address",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10939,
+                        "src": "1390:8:45",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 10944,
+                        "name": "troveManager",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10879,
+                        "src": "1363:12:45",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ITroveManager_$5733",
+                          "typeString": "contract ITroveManager"
+                        }
+                      },
+                      "id": 10945,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getCurrentICR",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5325,
+                      "src": "1363:26:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) view external returns (uint256)"
+                      }
+                    },
+                    "id": 10947,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1363:36:45",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 10943,
+                  "id": 10948,
+                  "nodeType": "Return",
+                  "src": "1356:43:45"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "753d3e5e",
+            "id": 10950,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "troveManager_getCurrentICR",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 10940,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10939,
+                  "mutability": "mutable",
+                  "name": "_address",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10950,
+                  "src": "1299:16:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10938,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1299:7:45",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1298:18:45"
+            },
+            "returnParameters": {
+              "id": 10943,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10942,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10950,
+                  "src": "1340:4:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10941,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1340:4:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1339:6:45"
+            },
+            "scope": 10972,
+            "src": "1263:143:45",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10970,
+              "nodeType": "Block",
+              "src": "1539:79:45",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 10965,
+                        "name": "_ICR",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10952,
+                        "src": "1588:4:45",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 10966,
+                        "name": "_prevId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10954,
+                        "src": "1594:7:45",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 10967,
+                        "name": "_nextId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10956,
+                        "src": "1603:7:45",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 10963,
+                        "name": "sortedTroves",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10883,
+                        "src": "1556:12:45",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ISortedTroves_$4805",
+                          "typeString": "contract ISortedTroves"
+                        }
+                      },
+                      "id": 10964,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "findInsertPosition",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4804,
+                      "src": "1556:31:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_uint256_$_t_address_$_t_address_$returns$_t_address_$_t_address_$",
+                        "typeString": "function (uint256,address,address) view external returns (address,address)"
+                      }
+                    },
+                    "id": 10968,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1556:55:45",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_address_$_t_address_$",
+                      "typeString": "tuple(address,address)"
+                    }
+                  },
+                  "functionReturnParameters": 10962,
+                  "id": 10969,
+                  "nodeType": "Return",
+                  "src": "1549:62:45"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "dcc6710f",
+            "id": 10971,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sortedTroves_findInsertPosition",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 10957,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10952,
+                  "mutability": "mutable",
+                  "name": "_ICR",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10971,
+                  "src": "1453:9:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10951,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1453:4:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10954,
+                  "mutability": "mutable",
+                  "name": "_prevId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10971,
+                  "src": "1464:15:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10953,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1464:7:45",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10956,
+                  "mutability": "mutable",
+                  "name": "_nextId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10971,
+                  "src": "1481:15:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10955,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1481:7:45",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1452:45:45"
+            },
+            "returnParameters": {
+              "id": 10962,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10959,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10971,
+                  "src": "1521:7:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10958,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1521:7:45",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10961,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 10971,
+                  "src": "1530:7:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10960,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1530:7:45",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1520:18:45"
+            },
+            "scope": 10972,
+            "src": "1412:206:45",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10973,
+        "src": "352:1268:45"
+      }
+    ],
+    "src": "40:1580:45"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/FunctionCaller.sol",
+      "exportedSymbols": {
+        "FunctionCaller": [
+          10972
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 10873,
+        "name": "PragmaDirective",
+        "src": "40:23:45"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5734,
+          "absolutePath": "project:/Interfaces/ITroveManager.sol",
+          "file": "../Interfaces/ITroveManager.sol",
+          "scope": 10973,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 10874,
+        "name": "ImportDirective",
+        "src": "65:41:45"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4806,
+          "absolutePath": "project:/Interfaces/ISortedTroves.sol",
+          "file": "../Interfaces/ISortedTroves.sol",
+          "scope": 10973,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 10875,
+        "name": "ImportDirective",
+        "src": "107:41:45"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4495,
+          "absolutePath": "project:/Interfaces/IPriceFeed.sol",
+          "file": "../Interfaces/IPriceFeed.sol",
+          "scope": 10973,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 10876,
+        "name": "ImportDirective",
+        "src": "149:38:45"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 988,
+          "absolutePath": "project:/Dependencies/LiquityMath.sol",
+          "file": "../Dependencies/LiquityMath.sol",
+          "scope": 10973,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 10877,
+        "name": "ImportDirective",
+        "src": "188:41:45"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            10972
+          ],
+          "name": "FunctionCaller",
+          "scope": 10973
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "troveManager",
+              "overrides": null,
+              "scope": 10972,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract ITroveManager",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "ITroveManager",
+                  "referencedDeclaration": 5733,
+                  "type": "contract ITroveManager"
+                },
+                "id": 10878,
+                "name": "UserDefinedTypeName",
+                "src": "383:13:45"
+              }
+            ],
+            "id": 10879,
+            "name": "VariableDeclaration",
+            "src": "383:26:45"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "5a4d28bb",
+              "mutability": "mutable",
+              "name": "troveManagerAddress",
+              "overrides": null,
+              "scope": 10972,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 10880,
+                "name": "ElementaryTypeName",
+                "src": "415:7:45"
+              }
+            ],
+            "id": 10881,
+            "name": "VariableDeclaration",
+            "src": "415:34:45"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "sortedTroves",
+              "overrides": null,
+              "scope": 10972,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract ISortedTroves",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "ISortedTroves",
+                  "referencedDeclaration": 4805,
+                  "type": "contract ISortedTroves"
+                },
+                "id": 10882,
+                "name": "UserDefinedTypeName",
+                "src": "456:13:45"
+              }
+            ],
+            "id": 10883,
+            "name": "VariableDeclaration",
+            "src": "456:26:45"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "2caffa81",
+              "mutability": "mutable",
+              "name": "sortedTrovesAddress",
+              "overrides": null,
+              "scope": 10972,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 10884,
+                "name": "ElementaryTypeName",
+                "src": "488:7:45"
+              }
+            ],
+            "id": 10885,
+            "name": "VariableDeclaration",
+            "src": "488:34:45"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "priceFeed",
+              "overrides": null,
+              "scope": 10972,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract IPriceFeed",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "IPriceFeed",
+                  "referencedDeclaration": 4494,
+                  "type": "contract IPriceFeed"
+                },
+                "id": 10886,
+                "name": "UserDefinedTypeName",
+                "src": "529:10:45"
+              }
+            ],
+            "id": 10887,
+            "name": "VariableDeclaration",
+            "src": "529:20:45"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "e0abca0b",
+              "mutability": "mutable",
+              "name": "priceFeedAddress",
+              "overrides": null,
+              "scope": 10972,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 10888,
+                "name": "ElementaryTypeName",
+                "src": "555:7:45"
+              }
+            ],
+            "id": 10889,
+            "name": "VariableDeclaration",
+            "src": "555:31:45"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "ced2027c",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setTroveManagerAddress",
+              "overrides": null,
+              "scope": 10972,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_troveManagerAddress",
+                      "overrides": null,
+                      "scope": 10905,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 10890,
+                        "name": "ElementaryTypeName",
+                        "src": "660:7:45"
+                      }
+                    ],
+                    "id": 10891,
+                    "name": "VariableDeclaration",
+                    "src": "660:28:45"
+                  }
+                ],
+                "id": 10892,
+                "name": "ParameterList",
+                "src": "659:30:45"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 10893,
+                "name": "ParameterList",
+                "src": "699:0:45"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10881,
+                              "type": "address",
+                              "value": "troveManagerAddress"
+                            },
+                            "id": 10894,
+                            "name": "Identifier",
+                            "src": "709:19:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10891,
+                              "type": "address",
+                              "value": "_troveManagerAddress"
+                            },
+                            "id": 10895,
+                            "name": "Identifier",
+                            "src": "731:20:45"
+                          }
+                        ],
+                        "id": 10896,
+                        "name": "Assignment",
+                        "src": "709:42:45"
+                      }
+                    ],
+                    "id": 10897,
+                    "name": "ExpressionStatement",
+                    "src": "709:42:45"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract ITroveManager"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10879,
+                              "type": "contract ITroveManager",
+                              "value": "troveManager"
+                            },
+                            "id": 10898,
+                            "name": "Identifier",
+                            "src": "761:12:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "contract ITroveManager",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 5733,
+                                  "type": "type(contract ITroveManager)",
+                                  "value": "ITroveManager"
+                                },
+                                "id": 10899,
+                                "name": "Identifier",
+                                "src": "776:13:45"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10891,
+                                  "type": "address",
+                                  "value": "_troveManagerAddress"
+                                },
+                                "id": 10900,
+                                "name": "Identifier",
+                                "src": "790:20:45"
+                              }
+                            ],
+                            "id": 10901,
+                            "name": "FunctionCall",
+                            "src": "776:35:45"
+                          }
+                        ],
+                        "id": 10902,
+                        "name": "Assignment",
+                        "src": "761:50:45"
+                      }
+                    ],
+                    "id": 10903,
+                    "name": "ExpressionStatement",
+                    "src": "761:50:45"
+                  }
+                ],
+                "id": 10904,
+                "name": "Block",
+                "src": "699:119:45"
+              }
+            ],
+            "id": 10905,
+            "name": "FunctionDefinition",
+            "src": "628:190:45"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "a06dec71",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setSortedTrovesAddress",
+              "overrides": null,
+              "scope": 10972,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_sortedTrovesAddress",
+                      "overrides": null,
+                      "scope": 10921,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 10906,
+                        "name": "ElementaryTypeName",
+                        "src": "856:7:45"
+                      }
+                    ],
+                    "id": 10907,
+                    "name": "VariableDeclaration",
+                    "src": "856:28:45"
+                  }
+                ],
+                "id": 10908,
+                "name": "ParameterList",
+                "src": "855:30:45"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 10909,
+                "name": "ParameterList",
+                "src": "895:0:45"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10881,
+                              "type": "address",
+                              "value": "troveManagerAddress"
+                            },
+                            "id": 10910,
+                            "name": "Identifier",
+                            "src": "905:19:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10907,
+                              "type": "address",
+                              "value": "_sortedTrovesAddress"
+                            },
+                            "id": 10911,
+                            "name": "Identifier",
+                            "src": "927:20:45"
+                          }
+                        ],
+                        "id": 10912,
+                        "name": "Assignment",
+                        "src": "905:42:45"
+                      }
+                    ],
+                    "id": 10913,
+                    "name": "ExpressionStatement",
+                    "src": "905:42:45"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract ISortedTroves"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10883,
+                              "type": "contract ISortedTroves",
+                              "value": "sortedTroves"
+                            },
+                            "id": 10914,
+                            "name": "Identifier",
+                            "src": "957:12:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "contract ISortedTroves",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4805,
+                                  "type": "type(contract ISortedTroves)",
+                                  "value": "ISortedTroves"
+                                },
+                                "id": 10915,
+                                "name": "Identifier",
+                                "src": "972:13:45"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10907,
+                                  "type": "address",
+                                  "value": "_sortedTrovesAddress"
+                                },
+                                "id": 10916,
+                                "name": "Identifier",
+                                "src": "986:20:45"
+                              }
+                            ],
+                            "id": 10917,
+                            "name": "FunctionCall",
+                            "src": "972:35:45"
+                          }
+                        ],
+                        "id": 10918,
+                        "name": "Assignment",
+                        "src": "957:50:45"
+                      }
+                    ],
+                    "id": 10919,
+                    "name": "ExpressionStatement",
+                    "src": "957:50:45"
+                  }
+                ],
+                "id": 10920,
+                "name": "Block",
+                "src": "895:119:45"
+              }
+            ],
+            "id": 10921,
+            "name": "FunctionDefinition",
+            "src": "824:190:45"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "00cf5db4",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setPriceFeedAddress",
+              "overrides": null,
+              "scope": 10972,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_priceFeedAddress",
+                      "overrides": null,
+                      "scope": 10937,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 10922,
+                        "name": "ElementaryTypeName",
+                        "src": "1049:7:45"
+                      }
+                    ],
+                    "id": 10923,
+                    "name": "VariableDeclaration",
+                    "src": "1049:25:45"
+                  }
+                ],
+                "id": 10924,
+                "name": "ParameterList",
+                "src": "1048:27:45"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 10925,
+                "name": "ParameterList",
+                "src": "1085:0:45"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10889,
+                              "type": "address",
+                              "value": "priceFeedAddress"
+                            },
+                            "id": 10926,
+                            "name": "Identifier",
+                            "src": "1095:16:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10923,
+                              "type": "address",
+                              "value": "_priceFeedAddress"
+                            },
+                            "id": 10927,
+                            "name": "Identifier",
+                            "src": "1114:17:45"
+                          }
+                        ],
+                        "id": 10928,
+                        "name": "Assignment",
+                        "src": "1095:36:45"
+                      }
+                    ],
+                    "id": 10929,
+                    "name": "ExpressionStatement",
+                    "src": "1095:36:45"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract IPriceFeed"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10887,
+                              "type": "contract IPriceFeed",
+                              "value": "priceFeed"
+                            },
+                            "id": 10930,
+                            "name": "Identifier",
+                            "src": "1141:9:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "contract IPriceFeed",
+                              "type_conversion": true
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4494,
+                                  "type": "type(contract IPriceFeed)",
+                                  "value": "IPriceFeed"
+                                },
+                                "id": 10931,
+                                "name": "Identifier",
+                                "src": "1153:10:45"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10923,
+                                  "type": "address",
+                                  "value": "_priceFeedAddress"
+                                },
+                                "id": 10932,
+                                "name": "Identifier",
+                                "src": "1164:17:45"
+                              }
+                            ],
+                            "id": 10933,
+                            "name": "FunctionCall",
+                            "src": "1153:29:45"
+                          }
+                        ],
+                        "id": 10934,
+                        "name": "Assignment",
+                        "src": "1141:41:45"
+                      }
+                    ],
+                    "id": 10935,
+                    "name": "ExpressionStatement",
+                    "src": "1141:41:45"
+                  }
+                ],
+                "id": 10936,
+                "name": "Block",
+                "src": "1085:104:45"
+              }
+            ],
+            "id": 10937,
+            "name": "FunctionDefinition",
+            "src": "1020:169:45"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "753d3e5e",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "troveManager_getCurrentICR",
+              "overrides": null,
+              "scope": 10972,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_address",
+                      "overrides": null,
+                      "scope": 10950,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 10938,
+                        "name": "ElementaryTypeName",
+                        "src": "1299:7:45"
+                      }
+                    ],
+                    "id": 10939,
+                    "name": "VariableDeclaration",
+                    "src": "1299:16:45"
+                  }
+                ],
+                "id": 10940,
+                "name": "ParameterList",
+                "src": "1298:18:45"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 10950,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 10941,
+                        "name": "ElementaryTypeName",
+                        "src": "1340:4:45"
+                      }
+                    ],
+                    "id": 10942,
+                    "name": "VariableDeclaration",
+                    "src": "1340:4:45"
+                  }
+                ],
+                "id": 10943,
+                "name": "ParameterList",
+                "src": "1339:6:45"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 10943
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "getCurrentICR",
+                              "referencedDeclaration": 5325,
+                              "type": "function (address) view external returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10879,
+                                  "type": "contract ITroveManager",
+                                  "value": "troveManager"
+                                },
+                                "id": 10944,
+                                "name": "Identifier",
+                                "src": "1363:12:45"
+                              }
+                            ],
+                            "id": 10945,
+                            "name": "MemberAccess",
+                            "src": "1363:26:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10939,
+                              "type": "address",
+                              "value": "_address"
+                            },
+                            "id": 10946,
+                            "name": "Identifier",
+                            "src": "1390:8:45"
+                          }
+                        ],
+                        "id": 10947,
+                        "name": "FunctionCall",
+                        "src": "1363:36:45"
+                      }
+                    ],
+                    "id": 10948,
+                    "name": "Return",
+                    "src": "1356:43:45"
+                  }
+                ],
+                "id": 10949,
+                "name": "Block",
+                "src": "1346:60:45"
+              }
+            ],
+            "id": 10950,
+            "name": "FunctionDefinition",
+            "src": "1263:143:45"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "dcc6710f",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "sortedTroves_findInsertPosition",
+              "overrides": null,
+              "scope": 10972,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_ICR",
+                      "overrides": null,
+                      "scope": 10971,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 10951,
+                        "name": "ElementaryTypeName",
+                        "src": "1453:4:45"
+                      }
+                    ],
+                    "id": 10952,
+                    "name": "VariableDeclaration",
+                    "src": "1453:9:45"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_prevId",
+                      "overrides": null,
+                      "scope": 10971,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 10953,
+                        "name": "ElementaryTypeName",
+                        "src": "1464:7:45"
+                      }
+                    ],
+                    "id": 10954,
+                    "name": "VariableDeclaration",
+                    "src": "1464:15:45"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_nextId",
+                      "overrides": null,
+                      "scope": 10971,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 10955,
+                        "name": "ElementaryTypeName",
+                        "src": "1481:7:45"
+                      }
+                    ],
+                    "id": 10956,
+                    "name": "VariableDeclaration",
+                    "src": "1481:15:45"
+                  }
+                ],
+                "id": 10957,
+                "name": "ParameterList",
+                "src": "1452:45:45"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 10971,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 10958,
+                        "name": "ElementaryTypeName",
+                        "src": "1521:7:45"
+                      }
+                    ],
+                    "id": 10959,
+                    "name": "VariableDeclaration",
+                    "src": "1521:7:45"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 10971,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 10960,
+                        "name": "ElementaryTypeName",
+                        "src": "1530:7:45"
+                      }
+                    ],
+                    "id": 10961,
+                    "name": "VariableDeclaration",
+                    "src": "1530:7:45"
+                  }
+                ],
+                "id": 10962,
+                "name": "ParameterList",
+                "src": "1520:18:45"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 10962
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple(address,address)",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "findInsertPosition",
+                              "referencedDeclaration": 4804,
+                              "type": "function (uint256,address,address) view external returns (address,address)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10883,
+                                  "type": "contract ISortedTroves",
+                                  "value": "sortedTroves"
+                                },
+                                "id": 10963,
+                                "name": "Identifier",
+                                "src": "1556:12:45"
+                              }
+                            ],
+                            "id": 10964,
+                            "name": "MemberAccess",
+                            "src": "1556:31:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10952,
+                              "type": "uint256",
+                              "value": "_ICR"
+                            },
+                            "id": 10965,
+                            "name": "Identifier",
+                            "src": "1588:4:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10954,
+                              "type": "address",
+                              "value": "_prevId"
+                            },
+                            "id": 10966,
+                            "name": "Identifier",
+                            "src": "1594:7:45"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10956,
+                              "type": "address",
+                              "value": "_nextId"
+                            },
+                            "id": 10967,
+                            "name": "Identifier",
+                            "src": "1603:7:45"
+                          }
+                        ],
+                        "id": 10968,
+                        "name": "FunctionCall",
+                        "src": "1556:55:45"
+                      }
+                    ],
+                    "id": 10969,
+                    "name": "Return",
+                    "src": "1549:62:45"
+                  }
+                ],
+                "id": 10970,
+                "name": "Block",
+                "src": "1539:79:45"
+              }
+            ],
+            "id": 10971,
+            "name": "FunctionDefinition",
+            "src": "1412:206:45"
+          }
+        ],
+        "id": 10972,
+        "name": "ContractDefinition",
+        "src": "352:1268:45"
+      }
+    ],
+    "id": 10973,
+    "name": "SourceUnit",
+    "src": "40:1580:45"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.799Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

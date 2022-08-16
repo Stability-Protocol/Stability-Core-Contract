@@ -1,0 +1,700 @@
+{
+  "contractName": "ITroveManagerRedemptions",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_SUSDamount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_SUSDMaxFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_firstRedemptionHint",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_upperPartialRedemptionHint",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_lowerPartialRedemptionHint",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_partialRedemptionHintNICR",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_maxIterations",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_redeemSender",
+          "type": "address"
+        }
+      ],
+      "name": "redeemCollateral",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_SUSDamount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_SUSDMaxFee\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_firstRedemptionHint\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_upperPartialRedemptionHint\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_lowerPartialRedemptionHint\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_partialRedemptionHintNICR\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxIterations\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_redeemSender\",\"type\":\"address\"}],\"name\":\"redeemCollateral\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/Interfaces/ITroveManagerRedemptions.sol\":\"ITroveManagerRedemptions\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Interfaces/ITroveManagerRedemptions.sol\":{\"keccak256\":\"0x4f2143cdf90fc7822b862ffba4a71b46b077f77eea1978044cd526a578d62375\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://122d3b5f5bb490de4053b9b75b79eaccfba4d4ab81e164209b5376c28e0199c2\",\"dweb:/ipfs/QmcS9uzbucRF3kFXwpWZU1VchbGX5FeUzsSqyweLpoFH6r\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\ninterface ITroveManagerRedemptions {\n    function redeemCollateral(\n        uint _SUSDamount,\n        uint _SUSDMaxFee,\n        address _firstRedemptionHint,\n        address _upperPartialRedemptionHint,\n        address _lowerPartialRedemptionHint,\n        uint _partialRedemptionHintNICR,\n        uint _maxIterations,\n        // uint _maxFeePercentage,\n        address _redeemSender\n    )\n    external;\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/Interfaces/ITroveManagerRedemptions.sol",
+  "ast": {
+    "absolutePath": "project:/Interfaces/ITroveManagerRedemptions.sol",
+    "exportedSymbols": {
+      "ITroveManagerRedemptions": [
+        5766
+      ]
+    },
+    "id": 5767,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5746,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:38"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5766,
+        "linearizedBaseContracts": [
+          5766
+        ],
+        "name": "ITroveManagerRedemptions",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "c2f6202d",
+            "id": 5765,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "redeemCollateral",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5763,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5748,
+                  "mutability": "mutable",
+                  "name": "_SUSDamount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5765,
+                  "src": "141:16:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5747,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "141:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5750,
+                  "mutability": "mutable",
+                  "name": "_SUSDMaxFee",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5765,
+                  "src": "167:16:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5749,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "167:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5752,
+                  "mutability": "mutable",
+                  "name": "_firstRedemptionHint",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5765,
+                  "src": "193:28:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5751,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "193:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5754,
+                  "mutability": "mutable",
+                  "name": "_upperPartialRedemptionHint",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5765,
+                  "src": "231:35:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5753,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "231:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5756,
+                  "mutability": "mutable",
+                  "name": "_lowerPartialRedemptionHint",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5765,
+                  "src": "276:35:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5755,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "276:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5758,
+                  "mutability": "mutable",
+                  "name": "_partialRedemptionHintNICR",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5765,
+                  "src": "321:31:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5757,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "321:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5760,
+                  "mutability": "mutable",
+                  "name": "_maxIterations",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5765,
+                  "src": "362:19:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5759,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "362:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5762,
+                  "mutability": "mutable",
+                  "name": "_redeemSender",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5765,
+                  "src": "426:21:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5761,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "426:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "131:322:38"
+            },
+            "returnParameters": {
+              "id": 5764,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "466:0:38"
+            },
+            "scope": 5766,
+            "src": "106:361:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5767,
+        "src": "65:404:38"
+      }
+    ],
+    "src": "40:429:38"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/Interfaces/ITroveManagerRedemptions.sol",
+      "exportedSymbols": {
+        "ITroveManagerRedemptions": [
+          5766
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 5746,
+        "name": "PragmaDirective",
+        "src": "40:23:38"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            5766
+          ],
+          "name": "ITroveManagerRedemptions",
+          "scope": 5767
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "c2f6202d",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "redeemCollateral",
+              "overrides": null,
+              "scope": 5766,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_SUSDamount",
+                      "overrides": null,
+                      "scope": 5765,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 5747,
+                        "name": "ElementaryTypeName",
+                        "src": "141:4:38"
+                      }
+                    ],
+                    "id": 5748,
+                    "name": "VariableDeclaration",
+                    "src": "141:16:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_SUSDMaxFee",
+                      "overrides": null,
+                      "scope": 5765,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 5749,
+                        "name": "ElementaryTypeName",
+                        "src": "167:4:38"
+                      }
+                    ],
+                    "id": 5750,
+                    "name": "VariableDeclaration",
+                    "src": "167:16:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_firstRedemptionHint",
+                      "overrides": null,
+                      "scope": 5765,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5751,
+                        "name": "ElementaryTypeName",
+                        "src": "193:7:38"
+                      }
+                    ],
+                    "id": 5752,
+                    "name": "VariableDeclaration",
+                    "src": "193:28:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_upperPartialRedemptionHint",
+                      "overrides": null,
+                      "scope": 5765,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5753,
+                        "name": "ElementaryTypeName",
+                        "src": "231:7:38"
+                      }
+                    ],
+                    "id": 5754,
+                    "name": "VariableDeclaration",
+                    "src": "231:35:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_lowerPartialRedemptionHint",
+                      "overrides": null,
+                      "scope": 5765,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5755,
+                        "name": "ElementaryTypeName",
+                        "src": "276:7:38"
+                      }
+                    ],
+                    "id": 5756,
+                    "name": "VariableDeclaration",
+                    "src": "276:35:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_partialRedemptionHintNICR",
+                      "overrides": null,
+                      "scope": 5765,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 5757,
+                        "name": "ElementaryTypeName",
+                        "src": "321:4:38"
+                      }
+                    ],
+                    "id": 5758,
+                    "name": "VariableDeclaration",
+                    "src": "321:31:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_maxIterations",
+                      "overrides": null,
+                      "scope": 5765,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 5759,
+                        "name": "ElementaryTypeName",
+                        "src": "362:4:38"
+                      }
+                    ],
+                    "id": 5760,
+                    "name": "VariableDeclaration",
+                    "src": "362:19:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_redeemSender",
+                      "overrides": null,
+                      "scope": 5765,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 5761,
+                        "name": "ElementaryTypeName",
+                        "src": "426:7:38"
+                      }
+                    ],
+                    "id": 5762,
+                    "name": "VariableDeclaration",
+                    "src": "426:21:38"
+                  }
+                ],
+                "id": 5763,
+                "name": "ParameterList",
+                "src": "131:322:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 5764,
+                "name": "ParameterList",
+                "src": "466:0:38"
+              }
+            ],
+            "id": 5765,
+            "name": "FunctionDefinition",
+            "src": "106:361:38"
+          }
+        ],
+        "id": 5766,
+        "name": "ContractDefinition",
+        "src": "65:404:38"
+      }
+    ],
+    "id": 5767,
+    "name": "SourceUnit",
+    "src": "40:429:38"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.766Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

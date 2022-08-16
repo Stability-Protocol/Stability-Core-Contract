@@ -1,0 +1,1891 @@
+{
+  "contractName": "IPriceCurve",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_whitelistAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setAddresses",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_decayTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "setDecayTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_dollarCap",
+          "type": "uint256"
+        }
+      ],
+      "name": "setDollarCap",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_collateralVCInput",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_collateralVCBalancePost",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalVCBalancePre",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalVCBalancePost",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_collateralVCInput",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalCollateralVCBalance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalVCBalancePre",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_totalVCBalancePost",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFeeAndUpdate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_lastFeePercent",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_lastFeeTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "setFeeCapAndTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getFeeCapAndTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "_lastFeePercent",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_lastFeeTime",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "calculateDecayedFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"calculateDecayedFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_collateralVCInput\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_collateralVCBalancePost\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_totalVCBalancePre\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_totalVCBalancePost\",\"type\":\"uint256\"}],\"name\":\"getFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_collateralVCInput\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_totalCollateralVCBalance\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_totalVCBalancePre\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_totalVCBalancePost\",\"type\":\"uint256\"}],\"name\":\"getFeeAndUpdate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getFeeCapAndTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_lastFeePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_lastFeeTime\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_whitelistAddress\",\"type\":\"address\"}],\"name\":\"setAddresses\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_decayTime\",\"type\":\"uint256\"}],\"name\":\"setDecayTime\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_dollarCap\",\"type\":\"uint256\"}],\"name\":\"setDollarCap\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_lastFeePercent\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_lastFeeTime\",\"type\":\"uint256\"}],\"name\":\"setFeeCapAndTime\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"calculateDecayedFee()\":{\"notice\":\"Returns fee based on decay since last fee calculation, which we take to be  a reasonable fee amount. If it has decayed a certain amount since then, we let the new fee amount slide. \"},\"getFee(uint256,uint256,uint256,uint256)\":{\"notice\":\"Returns fee based on inputted collateral VC balance and total VC balance of system.  fee is in terms of percentage * 1e18.  If the fee were 1%, this would be 0.01 * 1e18 = 1e16\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/Interfaces/IPriceCurve.sol\":\"IPriceCurve\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Interfaces/IPriceCurve.sol\":{\"keccak256\":\"0x1be1de246dba1cdd298794de390cd7532c855effe9b3b66cfe352bced13f4627\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6e9af942d1fa2fcbc6cde5c65c7a32814c09ee326c151ced88e206f6a612c49c\",\"dweb:/ipfs/QmbEdbbS5RHyZoMyaTvFkFRZCnUWhWTFsq4SBwfHd2hFdB\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\ninterface IPriceCurve {\n    function setAddresses(address _whitelistAddress) external;\n\n    function setDecayTime(uint _decayTime) external;\n\n    function setDollarCap(uint _dollarCap) external;\n\n    /** \n     * Returns fee based on inputted collateral VC balance and total VC balance of system. \n     * fee is in terms of percentage * 1e18. \n     * If the fee were 1%, this would be 0.01 * 1e18 = 1e16\n     */\n    function getFee(uint256 _collateralVCInput, uint256 _collateralVCBalancePost, uint256 _totalVCBalancePre, uint256 _totalVCBalancePost) external view returns (uint256 fee);\n\n    // Same function, updates the fee as well. Called only by whitelist. \n    function getFeeAndUpdate(uint256 _collateralVCInput, uint256 _totalCollateralVCBalance, uint256 _totalVCBalancePre, uint256 _totalVCBalancePost) external returns (uint256 fee);\n\n    // Function for setting the old price curve's last fee cap / value to the new fee cap / value. \n    // Called only by whitelist. \n    function setFeeCapAndTime(uint256 _lastFeePercent, uint256 _lastFeeTime) external;\n\n    // Gets the fee cap and time currently. Used for setting new values for next price curve. \n    // returns lastFeePercent, lastFeeTime\n    function getFeeCapAndTime() external view returns (uint256 _lastFeePercent, uint256 _lastFeeTime);\n\n    /** \n     * Returns fee based on decay since last fee calculation, which we take to be \n     * a reasonable fee amount. If it has decayed a certain amount since then, we let\n     * the new fee amount slide. \n     */\n    function calculateDecayedFee() external view returns (uint256 fee);\n}\n",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/Interfaces/IPriceCurve.sol",
+  "ast": {
+    "absolutePath": "project:/Interfaces/IPriceCurve.sol",
+    "exportedSymbols": {
+      "IPriceCurve": [
+        4482
+      ]
+    },
+    "id": 4483,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4419,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:27"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 4482,
+        "linearizedBaseContracts": [
+          4482
+        ],
+        "name": "IPriceCurve",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "81d3c435",
+            "id": 4424,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setAddresses",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4422,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4421,
+                  "mutability": "mutable",
+                  "name": "_whitelistAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4424,
+                  "src": "115:25:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4420,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "115:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "114:27:27"
+            },
+            "returnParameters": {
+              "id": 4423,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "150:0:27"
+            },
+            "scope": 4482,
+            "src": "93:58:27",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "97498845",
+            "id": 4429,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setDecayTime",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4427,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4426,
+                  "mutability": "mutable",
+                  "name": "_decayTime",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4429,
+                  "src": "179:15:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4425,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "179:4:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "178:17:27"
+            },
+            "returnParameters": {
+              "id": 4428,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "204:0:27"
+            },
+            "scope": 4482,
+            "src": "157:48:27",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "11cfe6a9",
+            "id": 4434,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setDollarCap",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4432,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4431,
+                  "mutability": "mutable",
+                  "name": "_dollarCap",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4434,
+                  "src": "233:15:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4430,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "233:4:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "232:17:27"
+            },
+            "returnParameters": {
+              "id": 4433,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "258:0:27"
+            },
+            "scope": 4482,
+            "src": "211:48:27",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 4435,
+              "nodeType": "StructuredDocumentation",
+              "src": "265:210:27",
+              "text": " Returns fee based on inputted collateral VC balance and total VC balance of system. \n fee is in terms of percentage * 1e18. \n If the fee were 1%, this would be 0.01 * 1e18 = 1e16"
+            },
+            "functionSelector": "73ddaef4",
+            "id": 4448,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFee",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4444,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4437,
+                  "mutability": "mutable",
+                  "name": "_collateralVCInput",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4448,
+                  "src": "496:26:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4436,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "496:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4439,
+                  "mutability": "mutable",
+                  "name": "_collateralVCBalancePost",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4448,
+                  "src": "524:32:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4438,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4441,
+                  "mutability": "mutable",
+                  "name": "_totalVCBalancePre",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4448,
+                  "src": "558:26:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4440,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "558:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4443,
+                  "mutability": "mutable",
+                  "name": "_totalVCBalancePost",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4448,
+                  "src": "586:27:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4442,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "586:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "495:119:27"
+            },
+            "returnParameters": {
+              "id": 4447,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4446,
+                  "mutability": "mutable",
+                  "name": "fee",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4448,
+                  "src": "638:11:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4445,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "638:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "637:13:27"
+            },
+            "scope": 4482,
+            "src": "480:171:27",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "e98f6176",
+            "id": 4461,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFeeAndUpdate",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4457,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4450,
+                  "mutability": "mutable",
+                  "name": "_collateralVCInput",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4461,
+                  "src": "756:26:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4449,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "756:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4452,
+                  "mutability": "mutable",
+                  "name": "_totalCollateralVCBalance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4461,
+                  "src": "784:33:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4451,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "784:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4454,
+                  "mutability": "mutable",
+                  "name": "_totalVCBalancePre",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4461,
+                  "src": "819:26:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4453,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "819:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4456,
+                  "mutability": "mutable",
+                  "name": "_totalVCBalancePost",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4461,
+                  "src": "847:27:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4455,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "847:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "755:120:27"
+            },
+            "returnParameters": {
+              "id": 4460,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4459,
+                  "mutability": "mutable",
+                  "name": "fee",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4461,
+                  "src": "894:11:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4458,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "894:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "893:13:27"
+            },
+            "scope": 4482,
+            "src": "731:176:27",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "2c3609a0",
+            "id": 4468,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setFeeCapAndTime",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4466,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4463,
+                  "mutability": "mutable",
+                  "name": "_lastFeePercent",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4468,
+                  "src": "1073:23:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4462,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1073:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4465,
+                  "mutability": "mutable",
+                  "name": "_lastFeeTime",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4468,
+                  "src": "1098:20:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4464,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1098:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1072:47:27"
+            },
+            "returnParameters": {
+              "id": 4467,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1128:0:27"
+            },
+            "scope": 4482,
+            "src": "1047:82:27",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "f2cfd551",
+            "id": 4475,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFeeCapAndTime",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4469,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1298:2:27"
+            },
+            "returnParameters": {
+              "id": 4474,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4471,
+                  "mutability": "mutable",
+                  "name": "_lastFeePercent",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4475,
+                  "src": "1324:23:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4470,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1324:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4473,
+                  "mutability": "mutable",
+                  "name": "_lastFeeTime",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4475,
+                  "src": "1349:20:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4472,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1349:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1323:47:27"
+            },
+            "scope": 4482,
+            "src": "1273:98:27",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 4476,
+              "nodeType": "StructuredDocumentation",
+              "src": "1377:215:27",
+              "text": " Returns fee based on decay since last fee calculation, which we take to be \n a reasonable fee amount. If it has decayed a certain amount since then, we let\n the new fee amount slide. "
+            },
+            "functionSelector": "d26e6aa4",
+            "id": 4481,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "calculateDecayedFee",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4477,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1625:2:27"
+            },
+            "returnParameters": {
+              "id": 4480,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4479,
+                  "mutability": "mutable",
+                  "name": "fee",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4481,
+                  "src": "1651:11:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4478,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1651:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1650:13:27"
+            },
+            "scope": 4482,
+            "src": "1597:67:27",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4483,
+        "src": "65:1601:27"
+      }
+    ],
+    "src": "40:1627:27"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/Interfaces/IPriceCurve.sol",
+      "exportedSymbols": {
+        "IPriceCurve": [
+          4482
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 4419,
+        "name": "PragmaDirective",
+        "src": "40:23:27"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            4482
+          ],
+          "name": "IPriceCurve",
+          "scope": 4483
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "81d3c435",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setAddresses",
+              "overrides": null,
+              "scope": 4482,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_whitelistAddress",
+                      "overrides": null,
+                      "scope": 4424,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4420,
+                        "name": "ElementaryTypeName",
+                        "src": "115:7:27"
+                      }
+                    ],
+                    "id": 4421,
+                    "name": "VariableDeclaration",
+                    "src": "115:25:27"
+                  }
+                ],
+                "id": 4422,
+                "name": "ParameterList",
+                "src": "114:27:27"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4423,
+                "name": "ParameterList",
+                "src": "150:0:27"
+              }
+            ],
+            "id": 4424,
+            "name": "FunctionDefinition",
+            "src": "93:58:27"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "97498845",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setDecayTime",
+              "overrides": null,
+              "scope": 4482,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_decayTime",
+                      "overrides": null,
+                      "scope": 4429,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4425,
+                        "name": "ElementaryTypeName",
+                        "src": "179:4:27"
+                      }
+                    ],
+                    "id": 4426,
+                    "name": "VariableDeclaration",
+                    "src": "179:15:27"
+                  }
+                ],
+                "id": 4427,
+                "name": "ParameterList",
+                "src": "178:17:27"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4428,
+                "name": "ParameterList",
+                "src": "204:0:27"
+              }
+            ],
+            "id": 4429,
+            "name": "FunctionDefinition",
+            "src": "157:48:27"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "11cfe6a9",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setDollarCap",
+              "overrides": null,
+              "scope": 4482,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_dollarCap",
+                      "overrides": null,
+                      "scope": 4434,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4430,
+                        "name": "ElementaryTypeName",
+                        "src": "233:4:27"
+                      }
+                    ],
+                    "id": 4431,
+                    "name": "VariableDeclaration",
+                    "src": "233:15:27"
+                  }
+                ],
+                "id": 4432,
+                "name": "ParameterList",
+                "src": "232:17:27"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4433,
+                "name": "ParameterList",
+                "src": "258:0:27"
+              }
+            ],
+            "id": 4434,
+            "name": "FunctionDefinition",
+            "src": "211:48:27"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "73ddaef4",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getFee",
+              "overrides": null,
+              "scope": 4482,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " Returns fee based on inputted collateral VC balance and total VC balance of system. \n fee is in terms of percentage * 1e18. \n If the fee were 1%, this would be 0.01 * 1e18 = 1e16"
+                },
+                "id": 4435,
+                "name": "StructuredDocumentation",
+                "src": "265:210:27"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_collateralVCInput",
+                      "overrides": null,
+                      "scope": 4448,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4436,
+                        "name": "ElementaryTypeName",
+                        "src": "496:7:27"
+                      }
+                    ],
+                    "id": 4437,
+                    "name": "VariableDeclaration",
+                    "src": "496:26:27"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_collateralVCBalancePost",
+                      "overrides": null,
+                      "scope": 4448,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4438,
+                        "name": "ElementaryTypeName",
+                        "src": "524:7:27"
+                      }
+                    ],
+                    "id": 4439,
+                    "name": "VariableDeclaration",
+                    "src": "524:32:27"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_totalVCBalancePre",
+                      "overrides": null,
+                      "scope": 4448,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4440,
+                        "name": "ElementaryTypeName",
+                        "src": "558:7:27"
+                      }
+                    ],
+                    "id": 4441,
+                    "name": "VariableDeclaration",
+                    "src": "558:26:27"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_totalVCBalancePost",
+                      "overrides": null,
+                      "scope": 4448,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4442,
+                        "name": "ElementaryTypeName",
+                        "src": "586:7:27"
+                      }
+                    ],
+                    "id": 4443,
+                    "name": "VariableDeclaration",
+                    "src": "586:27:27"
+                  }
+                ],
+                "id": 4444,
+                "name": "ParameterList",
+                "src": "495:119:27"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "fee",
+                      "overrides": null,
+                      "scope": 4448,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4445,
+                        "name": "ElementaryTypeName",
+                        "src": "638:7:27"
+                      }
+                    ],
+                    "id": 4446,
+                    "name": "VariableDeclaration",
+                    "src": "638:11:27"
+                  }
+                ],
+                "id": 4447,
+                "name": "ParameterList",
+                "src": "637:13:27"
+              }
+            ],
+            "id": 4448,
+            "name": "FunctionDefinition",
+            "src": "480:171:27"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "e98f6176",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getFeeAndUpdate",
+              "overrides": null,
+              "scope": 4482,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_collateralVCInput",
+                      "overrides": null,
+                      "scope": 4461,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4449,
+                        "name": "ElementaryTypeName",
+                        "src": "756:7:27"
+                      }
+                    ],
+                    "id": 4450,
+                    "name": "VariableDeclaration",
+                    "src": "756:26:27"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_totalCollateralVCBalance",
+                      "overrides": null,
+                      "scope": 4461,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4451,
+                        "name": "ElementaryTypeName",
+                        "src": "784:7:27"
+                      }
+                    ],
+                    "id": 4452,
+                    "name": "VariableDeclaration",
+                    "src": "784:33:27"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_totalVCBalancePre",
+                      "overrides": null,
+                      "scope": 4461,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4453,
+                        "name": "ElementaryTypeName",
+                        "src": "819:7:27"
+                      }
+                    ],
+                    "id": 4454,
+                    "name": "VariableDeclaration",
+                    "src": "819:26:27"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_totalVCBalancePost",
+                      "overrides": null,
+                      "scope": 4461,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4455,
+                        "name": "ElementaryTypeName",
+                        "src": "847:7:27"
+                      }
+                    ],
+                    "id": 4456,
+                    "name": "VariableDeclaration",
+                    "src": "847:27:27"
+                  }
+                ],
+                "id": 4457,
+                "name": "ParameterList",
+                "src": "755:120:27"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "fee",
+                      "overrides": null,
+                      "scope": 4461,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4458,
+                        "name": "ElementaryTypeName",
+                        "src": "894:7:27"
+                      }
+                    ],
+                    "id": 4459,
+                    "name": "VariableDeclaration",
+                    "src": "894:11:27"
+                  }
+                ],
+                "id": 4460,
+                "name": "ParameterList",
+                "src": "893:13:27"
+              }
+            ],
+            "id": 4461,
+            "name": "FunctionDefinition",
+            "src": "731:176:27"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "2c3609a0",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setFeeCapAndTime",
+              "overrides": null,
+              "scope": 4482,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_lastFeePercent",
+                      "overrides": null,
+                      "scope": 4468,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4462,
+                        "name": "ElementaryTypeName",
+                        "src": "1073:7:27"
+                      }
+                    ],
+                    "id": 4463,
+                    "name": "VariableDeclaration",
+                    "src": "1073:23:27"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_lastFeeTime",
+                      "overrides": null,
+                      "scope": 4468,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4464,
+                        "name": "ElementaryTypeName",
+                        "src": "1098:7:27"
+                      }
+                    ],
+                    "id": 4465,
+                    "name": "VariableDeclaration",
+                    "src": "1098:20:27"
+                  }
+                ],
+                "id": 4466,
+                "name": "ParameterList",
+                "src": "1072:47:27"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4467,
+                "name": "ParameterList",
+                "src": "1128:0:27"
+              }
+            ],
+            "id": 4468,
+            "name": "FunctionDefinition",
+            "src": "1047:82:27"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "f2cfd551",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getFeeCapAndTime",
+              "overrides": null,
+              "scope": 4482,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4469,
+                "name": "ParameterList",
+                "src": "1298:2:27"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_lastFeePercent",
+                      "overrides": null,
+                      "scope": 4475,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4470,
+                        "name": "ElementaryTypeName",
+                        "src": "1324:7:27"
+                      }
+                    ],
+                    "id": 4471,
+                    "name": "VariableDeclaration",
+                    "src": "1324:23:27"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_lastFeeTime",
+                      "overrides": null,
+                      "scope": 4475,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4472,
+                        "name": "ElementaryTypeName",
+                        "src": "1349:7:27"
+                      }
+                    ],
+                    "id": 4473,
+                    "name": "VariableDeclaration",
+                    "src": "1349:20:27"
+                  }
+                ],
+                "id": 4474,
+                "name": "ParameterList",
+                "src": "1323:47:27"
+              }
+            ],
+            "id": 4475,
+            "name": "FunctionDefinition",
+            "src": "1273:98:27"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "d26e6aa4",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "calculateDecayedFee",
+              "overrides": null,
+              "scope": 4482,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": " Returns fee based on decay since last fee calculation, which we take to be \n a reasonable fee amount. If it has decayed a certain amount since then, we let\n the new fee amount slide. "
+                },
+                "id": 4476,
+                "name": "StructuredDocumentation",
+                "src": "1377:215:27"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4477,
+                "name": "ParameterList",
+                "src": "1625:2:27"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "fee",
+                      "overrides": null,
+                      "scope": 4481,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4478,
+                        "name": "ElementaryTypeName",
+                        "src": "1651:7:27"
+                      }
+                    ],
+                    "id": 4479,
+                    "name": "VariableDeclaration",
+                    "src": "1651:11:27"
+                  }
+                ],
+                "id": 4480,
+                "name": "ParameterList",
+                "src": "1650:13:27"
+              }
+            ],
+            "id": 4481,
+            "name": "FunctionDefinition",
+            "src": "1597:67:27"
+          }
+        ],
+        "id": 4482,
+        "name": "ContractDefinition",
+        "src": "65:1601:27"
+      }
+    ],
+    "id": 4483,
+    "name": "SourceUnit",
+    "src": "40:1627:27"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.755Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "calculateDecayedFee()": {
+        "notice": "Returns fee based on decay since last fee calculation, which we take to be  a reasonable fee amount. If it has decayed a certain amount since then, we let the new fee amount slide. "
+      },
+      "getFee(uint256,uint256,uint256,uint256)": {
+        "notice": "Returns fee based on inputted collateral VC balance and total VC balance of system.  fee is in terms of percentage * 1e18.  If the fee were 1%, this would be 0.01 * 1e18 = 1e16"
+      }
+    },
+    "version": 1
+  }
+}

@@ -17,7 +17,7 @@ import "../Dependencies/SafeERC20.sol";
 import "../Interfaces/IDefaultPool.sol";
 
 
-contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
+contract ActivePool is Ownable, CheckContract,  PoolBase2 {
       using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
@@ -42,8 +42,12 @@ contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
 
      // --- Events ---
 
-    event BorrowerOperationsAddressChanged(address _newBorrowerOperationsAddress);
-    event TroveManagerAddressChanged(address _newTroveManagerAddress);
+   // event BorrowerOperationsAddressChanged(address _newBorrowerOperationsAddress);
+   // event TroveManagerAddressChanged(address _newTroveManagerAddress);
+   //  event StabilityPoolAddressChanged(_stabilityPoolAddress);
+   // event DefaultPoolAddressChanged(_defaultPoolAddress);
+   //  event WhitelistAddressChanged(_whitelistAddress);
+
     event ActivePoolSUSDDebtUpdated(uint _SUSDDebt);
     event ActivePoolBalanceUpdated(address _collateral, uint _amount);
 
@@ -55,8 +59,8 @@ contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
         address _stabilityPoolAddress,
         address _defaultPoolAddress,
         address _whitelistAddress,
-       // address _troveManagerLiquidationsAddress,
-       // address _troveManagerRedemptionsAddress,
+       address _troveManagerLiquidationsAddress,
+       address _troveManagerRedemptionsAddress,
         address _collSurplusPoolAddress
     )
         external
@@ -67,8 +71,8 @@ contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
         checkContract(_stabilityPoolAddress);
         checkContract(_defaultPoolAddress);
         checkContract(_whitelistAddress);
-       // checkContract(_troveManagerLiquidationsAddress);
-       // checkContract(_troveManagerRedemptionsAddress);
+       checkContract(_troveManagerLiquidationsAddress);
+       checkContract(_troveManagerRedemptionsAddress);
         checkContract(_collSurplusPoolAddress);
 
         borrowerOperationsAddress = _borrowerOperationsAddress;
@@ -76,15 +80,15 @@ contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
         stabilityPoolAddress = _stabilityPoolAddress;
         defaultPoolAddress = _defaultPoolAddress;
         whitelist = IWhitelist(_whitelistAddress);
-       // troveManagerLiquidationsAddress = _troveManagerLiquidationsAddress;
-      //  troveManagerRedemptionsAddress = _troveManagerRedemptionsAddress;
+        troveManagerLiquidationsAddress = _troveManagerLiquidationsAddress;
+       troveManagerRedemptionsAddress = _troveManagerRedemptionsAddress;
         collSurplusPoolAddress = _collSurplusPoolAddress;
 
-        emit BorrowerOperationsAddressChanged(_borrowerOperationsAddress);
-        emit TroveManagerAddressChanged(_troveManagerAddress);
-        emit StabilityPoolAddressChanged(_stabilityPoolAddress);
-        emit DefaultPoolAddressChanged(_defaultPoolAddress);
-        emit WhitelistAddressChanged(_whitelistAddress);
+      //  emit BorrowerOperationsAddressChanged(_borrowerOperationsAddress);
+       // emit TroveManagerAddressChanged(_troveManagerAddress);
+       // emit StabilityPoolAddressChanged(_stabilityPoolAddress);
+       // emit DefaultPoolAddressChanged(_defaultPoolAddress);
+       // emit WhitelistAddressChanged(_whitelistAddress);
 
         _renounceOwnership();
     }
@@ -96,12 +100,12 @@ contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
     /*
     * Returns the amount of a given collateral in state. Not necessarily the contract's actual balance.
     */
-    function getCollateral(address _collateral) public view override returns (uint) {
+    function getCollateral(address _collateral) public view  returns (uint) {
         return poolColl.amounts[whitelist.getIndex(_collateral)];
     }
 
       // Debt that this pool holds. 
-    function getSUSDDebt() external view override returns (uint) {
+    function getSUSDDebt() external view  returns (uint) {
         return SUSDDebt;
     }
 
@@ -115,12 +119,12 @@ contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
         IERC20(_collateral).safeTransfer(_to, _amount);
 
         emit ActivePoolBalanceUpdated(_collateral, _amount);
-        emit CollateralSent(_collateral, _to, _amount);
+      //  emit CollateralSent(_collateral, _to, _amount);
     }
 
     // Function sends collaterals from active pool.
     // Must be called by borrower operations, trove manager, or stability pool.
-    function sendCollaterals(address _to, address[] calldata _tokens, uint[] calldata _amounts) external override {
+    function sendCollaterals(address _to, address[] calldata _tokens, uint[] calldata _amounts) external  {
         _requireCallerIsBOorTroveMorTMLorSP();
         uint256 len = _tokens.length;
         require(len == _amounts.length, "AP:Lengths");
@@ -135,11 +139,11 @@ contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
             ICollateralReceiver(_to).receiveCollateral(_tokens, _amounts);
         }
 
-        emit CollateralSent(_tokens, _amounts, _to);
+        //emit CollateralSent(_tokens, _amounts, _to);
     }
 
       // Function for sending single collateral. Currently only used by borrower operations unlever up functionality
-    function sendSingleCollateral(address _to, address _token, uint256 _amount) external override {
+    function sendSingleCollateral(address _to, address _token, uint256 _amount) external  {
         _requireCallerIsBorrowerOperations();
         _sendCollateral(_to, _token, _amount); // reverts if send fails
     }
@@ -150,14 +154,14 @@ contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
     }
 
         // Increases the YUSD Debt of this pool. 
-    function increaseSUSDDebt(uint _amount) external override {
+    function increaseSUSDDebt(uint _amount) external  {
         _requireCallerIsBOorTroveM();
         SUSDDebt  = SUSDDebt.add(_amount);
         emit ActivePoolSUSDDebtUpdated(SUSDDebt);
     }
 
     // Decreases the YUSD Debt of this pool. 
-    function decreaseSUSDDebt(uint _amount) external override {
+    function decreaseSUSDDebt(uint _amount) external  {
         _requireCallerIsBOorTroveMorSP();
         SUSDDebt = SUSDDebt.sub(_amount);
         emit ActivePoolSUSDDebtUpdated(SUSDDebt);
@@ -217,14 +221,14 @@ contract ActivePool is Ownable, CheckContract, IActivePool, PoolBase2 {
 
     // should be called by BorrowerOperations or DefaultPool
     // __after__ collateral is transferred to this contract.
-    function receiveCollateral(address[] calldata _tokens, uint[] calldata _amounts) external override {
+    function receiveCollateral(address[] calldata _tokens, uint[] calldata _amounts) external  {
         _requireCallerIsBorrowerOperationsOrDefaultPool();
         poolColl.amounts = _leftSumColls(poolColl, _tokens, _amounts);
-        emit ActivePoolBalanceUpdated(_tokens, _amounts);
+        //emit ActivePoolBalanceUpdated(_tokens, _amounts);
     }
 
     // Adds collateral type from whitelist. 
-    function addCollateralType(address _collateral) external override {
+    function addCollateralType(address _collateral) external  {
         _requireCallerIsWhitelist();
         poolColl.tokens.push(_collateral);
         poolColl.amounts.push(0);

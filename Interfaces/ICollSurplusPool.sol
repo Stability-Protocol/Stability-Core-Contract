@@ -37,7 +37,7 @@ interface ICollSurplusPool is ICollateralReceiver {
 
     function accountSurplus(address _account, address[] memory _tokens, uint[] memory _amounts) external;
 
-    function claimColl(address _account) external;
+    function claim(address _account) external;
 
     function addCollateralType(address _collateral) external;
 }

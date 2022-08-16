@@ -16,7 +16,7 @@ import "../Dependencies/SafeERC20.sol";
  * The CollSurplusPool holds all the bonus collateral that occurs from liquidations and
  * redemptions, to be claimed by the trove owner.ß
  */
-contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool, PoolBase {
+contract CollSurplusPool is Ownable, CheckContract,  PoolBase {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
@@ -50,7 +50,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool, PoolBase {
         address _troveManagerRedemptionsAddress,
         address _activePoolAddress,
         address _whitelistAddress
-    ) external override onlyOwner {
+    ) external  onlyOwner {
         checkContract(_borrowerOperationsAddress);
         checkContract(_troveManagerAddress);
         checkContract(_troveManagerRedemptionsAddress);
@@ -78,7 +78,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool, PoolBase {
      * Computed when called by taking the collateral balances and
      * multiplying them by the corresponding price and ratio and then summing that
      */
-    function getCollVC() external view override returns (uint256) {
+    function getCollVC() external view  returns (uint256) {
         return _getVCColls(poolColl);
     }
 
@@ -88,7 +88,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool, PoolBase {
     function getAmountClaimable(address _account, address _collateral)
         external
         view
-        override
+        
         returns (uint256)
     {
         uint256 collateralIndex = whitelist.getIndex(_collateral);
@@ -103,7 +103,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool, PoolBase {
      *
      * Returns the amount of a given collateral in state. Not necessarily the contract's actual balance.
      */
-    function getCollateral(address _collateral) external view override returns (uint256) {
+    function getCollateral(address _collateral) external view  returns (uint256) {
         uint256 collateralIndex = whitelist.getIndex(_collateral);
         return poolColl.amounts[collateralIndex];
     }
@@ -112,7 +112,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool, PoolBase {
      *
      * Returns all collateral balances in state. Not necessarily the contract's actual balances.
      */
-    function getAllCollateral() external view override returns (address[] memory, uint256[] memory) {
+    function getAllCollateral() external view  returns (address[] memory, uint256[] memory) {
         return (poolColl.tokens, poolColl.amounts);
     }
 
@@ -123,7 +123,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool, PoolBase {
         address _account,
         address[] memory _tokens,
         uint256[] memory _amounts
-    ) external override {
+    ) external {
         _requireCallerIsTroveManager();
         balances[_account] = _sumColls(balances[_account], newColls(_tokens, _amounts));
         emit CollBalanceUpdated(_account);
@@ -131,7 +131,7 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool, PoolBase {
 
     // Function called by borrower operations which claims the collateral that is owned by
     // a particular trove user.
-    function claim(address _account) external override {
+    function claim(address _account) external  {
         _requireCallerIsBorrowerOperations();
 
         newColls memory claimableColl = balances[_account];
@@ -180,14 +180,14 @@ contract CollSurplusPool is Ownable, CheckContract, ICollSurplusPool, PoolBase {
 
     function receiveCollateral(address[] memory _tokens, uint256[] memory _amounts)
         external
-        override
+        
     {
         _requireCallerIsActivePool();
         poolColl.amounts = _leftSumColls(poolColl, _tokens, _amounts);
     }
 
     // Adds collateral type from the whitelist.
-    function addCollateralType(address _collateral) external override {
+    function addCollateralType(address _collateral) external  {
         _requireCallerIsWhitelist();
         poolColl.tokens.push(_collateral);
         poolColl.amounts.push(0);

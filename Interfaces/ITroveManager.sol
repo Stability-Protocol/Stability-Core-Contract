@@ -101,7 +101,7 @@ interface ITroveManager is ILiquityBase {
 //    function getPendingETHReward(address _borrower) external view returns (uint);
     function getPendingCollRewards(address _borrower) external view returns (address[] memory, uint[] memory);
 
-    function getPendingYUSDDebtReward(address _borrower) external view returns (uint);
+    function getPendingSUSDDebtReward(address _borrower) external view returns (uint);
 
      function hasPendingRewards(address _borrower) external view returns (bool);
 

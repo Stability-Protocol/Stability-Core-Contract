@@ -24,7 +24,7 @@ import "../Dependencies/CheckContract.sol";
 * 2) sendToPool() and returnFromPool(): functions callable only Yeti core contracts, which move YUSD tokens between Yeti <-> user.
 */
 
-contract YUSDToken is CheckContract, ISUSDToken {
+contract SUSDToken is CheckContract, ISUSDToken {
     using SafeMath for uint256;
     
     uint256 private _totalSupply;

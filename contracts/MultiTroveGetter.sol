@@ -113,7 +113,7 @@ contract MultiTroveGetter {
 
             data.stakeAmounts[i] = troveManager.getTroveStake(_troveOwner, token);
             data.snapshotAmounts[i] = troveManager.getRewardSnapshotColl(_troveOwner, token);
-            data.snapshotYUSDDebts[i] = troveManager.getRewardSnapshotYUSD(_troveOwner, token);
+            data.snapshotYUSDDebts[i] = troveManager.getRewardSnapshotSUSD(_troveOwner, token);
         }
     }
 }

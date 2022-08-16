@@ -1,0 +1,228 @@
+{
+  "contractName": "BaseMath",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "DECIMAL_PRECISION",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DECIMAL_PRECISION\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/Dependencies/BaseMath.sol\":\"BaseMath\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Dependencies/BaseMath.sol\":{\"keccak256\":\"0xfdc09bb7881be18ae68eb1bd6be497e3d23f90bc101d8e1c26f9bfbedabb919c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://5d2e9d7e0e7d64da76b945b275deec8ee82c816b66e018c25ae6b0f18a8c1476\",\"dweb:/ipfs/QmY72STa3386Z6jM3uitmjNj4Kt97Zmvx37Hncusea2Pn8\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50608b8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063a20baee614602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b670de0b6b3a76400008156fea26469706673582212204cd53e0f8218a8daa3426b90026193b4df87c91336f68b0457184d7520d99b1464736f6c634300060b0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063a20baee614602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b670de0b6b3a76400008156fea26469706673582212204cd53e0f8218a8daa3426b90026193b4df87c91336f68b0457184d7520d99b1464736f6c634300060b0033",
+  "immutableReferences": {},
+  "sourceMap": "65:72:2:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "65:72:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;89:45;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;130:4;89:45;:::o",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity 0.6.11;\n\n\ncontract BaseMath {\n    uint constant public DECIMAL_PRECISION = 1e18;\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/Dependencies/BaseMath.sol",
+  "ast": {
+    "absolutePath": "project:/Dependencies/BaseMath.sol",
+    "exportedSymbols": {
+      "BaseMath": [
+        347
+      ]
+    },
+    "id": 348,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 343,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:2"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 347,
+        "linearizedBaseContracts": [
+          347
+        ],
+        "name": "BaseMath",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "functionSelector": "a20baee6",
+            "id": 346,
+            "mutability": "constant",
+            "name": "DECIMAL_PRECISION",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 347,
+            "src": "89:45:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 344,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "89:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "31653138",
+              "id": 345,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "130:4:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1000000000000000000_by_1",
+                "typeString": "int_const 1000000000000000000"
+              },
+              "value": "1e18"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 348,
+        "src": "65:72:2"
+      }
+    ],
+    "src": "39:98:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/Dependencies/BaseMath.sol",
+      "exportedSymbols": {
+        "BaseMath": [
+          347
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 343,
+        "name": "PragmaDirective",
+        "src": "39:23:2"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            347
+          ],
+          "name": "BaseMath",
+          "scope": 348
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": true,
+              "functionSelector": "a20baee6",
+              "mutability": "constant",
+              "name": "DECIMAL_PRECISION",
+              "overrides": null,
+              "scope": 347,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 344,
+                "name": "ElementaryTypeName",
+                "src": "89:4:2"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "31653138",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 1000000000000000000",
+                  "value": "1e18"
+                },
+                "id": 345,
+                "name": "Literal",
+                "src": "130:4:2"
+              }
+            ],
+            "id": 346,
+            "name": "VariableDeclaration",
+            "src": "89:45:2"
+          }
+        ],
+        "id": 347,
+        "name": "ContractDefinition",
+        "src": "65:72:2"
+      }
+    ],
+    "id": 348,
+    "name": "SourceUnit",
+    "src": "39:98:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.707Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

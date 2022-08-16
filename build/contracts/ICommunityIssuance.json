@@ -1,0 +1,994 @@
+{
+  "contractName": "ICommunityIssuance",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_stbTokenAddress",
+          "type": "address"
+        }
+      ],
+      "name": "STBTokenAddressSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_stabilityPoolAddress",
+          "type": "address"
+        }
+      ],
+      "name": "StabilityPoolAddressSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_totalSTBIssued",
+          "type": "uint256"
+        }
+      ],
+      "name": "TotalSTBIssuedUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_stbTokenAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_stabilityPoolAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setAddresses",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "issueSTB",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_STBamount",
+          "type": "uint256"
+        }
+      ],
+      "name": "sendSTB",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_stbTokenAddress\",\"type\":\"address\"}],\"name\":\"STBTokenAddressSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_stabilityPoolAddress\",\"type\":\"address\"}],\"name\":\"StabilityPoolAddressSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_totalSTBIssued\",\"type\":\"uint256\"}],\"name\":\"TotalSTBIssuedUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"issueSTB\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_STBamount\",\"type\":\"uint256\"}],\"name\":\"sendSTB\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stbTokenAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_stabilityPoolAddress\",\"type\":\"address\"}],\"name\":\"setAddresses\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/Interfaces/ICommunityIssuance.sol\":\"ICommunityIssuance\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Interfaces/ICommunityIssuance.sol\":{\"keccak256\":\"0x1306d9e4c1694870450bea20860c6e6d2e9110d8e311c57e3b7a329594560259\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://a6be4e8ebbbe298c084f3da9bd7a100b2a80e4b5b459d30257656bac9f59566e\",\"dweb:/ipfs/QmNnzQhycvQ437mH3t1DyjAYXU6ibza2v6eP941Gm8GZC5\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\ninterface ICommunityIssuance { \n    \n    // --- Events ---\n    \n    event STBTokenAddressSet(address _stbTokenAddress);\n    event StabilityPoolAddressSet(address _stabilityPoolAddress);\n    event TotalSTBIssuedUpdated(uint _totalSTBIssued);\n\n    // --- Functions ---\n\n    function setAddresses(address _stbTokenAddress, address _stabilityPoolAddress) external;\n\n    function issueSTB() external returns (uint);\n\n    function sendSTB(address _account, uint _STBamount) external;\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/Interfaces/ICommunityIssuance.sol",
+  "ast": {
+    "absolutePath": "project:/Interfaces/ICommunityIssuance.sol",
+    "exportedSymbols": {
+      "ICommunityIssuance": [
+        4118
+      ]
+    },
+    "id": 4119,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4086,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:21"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 4118,
+        "linearizedBaseContracts": [
+          4118
+        ],
+        "name": "ICommunityIssuance",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4090,
+            "name": "STBTokenAddressSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4089,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4088,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_stbTokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4090,
+                  "src": "158:24:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4087,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "158:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "157:26:21"
+            },
+            "src": "133:51:21"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4094,
+            "name": "StabilityPoolAddressSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4093,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4092,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_stabilityPoolAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4094,
+                  "src": "219:29:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4091,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "219:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "218:31:21"
+            },
+            "src": "189:61:21"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4098,
+            "name": "TotalSTBIssuedUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4097,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4096,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_totalSTBIssued",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4098,
+                  "src": "283:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4095,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "283:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "282:22:21"
+            },
+            "src": "255:50:21"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "90107afe",
+            "id": 4105,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setAddresses",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4103,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4100,
+                  "mutability": "mutable",
+                  "name": "_stbTokenAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4105,
+                  "src": "359:24:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4099,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "359:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4102,
+                  "mutability": "mutable",
+                  "name": "_stabilityPoolAddress",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4105,
+                  "src": "385:29:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4101,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "385:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "358:57:21"
+            },
+            "returnParameters": {
+              "id": 4104,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "424:0:21"
+            },
+            "scope": 4118,
+            "src": "337:88:21",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "77e704be",
+            "id": 4110,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "issueSTB",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4106,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "448:2:21"
+            },
+            "returnParameters": {
+              "id": 4109,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4108,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4110,
+                  "src": "469:4:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4107,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "469:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "468:6:21"
+            },
+            "scope": 4118,
+            "src": "431:44:21",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "a3e12831",
+            "id": 4117,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "sendSTB",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4115,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4112,
+                  "mutability": "mutable",
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4117,
+                  "src": "498:16:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4111,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "498:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4114,
+                  "mutability": "mutable",
+                  "name": "_STBamount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4117,
+                  "src": "516:15:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4113,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "516:4:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "497:35:21"
+            },
+            "returnParameters": {
+              "id": 4116,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "541:0:21"
+            },
+            "scope": 4118,
+            "src": "481:61:21",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4119,
+        "src": "65:479:21"
+      }
+    ],
+    "src": "40:504:21"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/Interfaces/ICommunityIssuance.sol",
+      "exportedSymbols": {
+        "ICommunityIssuance": [
+          4118
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 4086,
+        "name": "PragmaDirective",
+        "src": "40:23:21"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            4118
+          ],
+          "name": "ICommunityIssuance",
+          "scope": 4119
+        },
+        "children": [
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "STBTokenAddressSet"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_stbTokenAddress",
+                      "overrides": null,
+                      "scope": 4090,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4087,
+                        "name": "ElementaryTypeName",
+                        "src": "158:7:21"
+                      }
+                    ],
+                    "id": 4088,
+                    "name": "VariableDeclaration",
+                    "src": "158:24:21"
+                  }
+                ],
+                "id": 4089,
+                "name": "ParameterList",
+                "src": "157:26:21"
+              }
+            ],
+            "id": 4090,
+            "name": "EventDefinition",
+            "src": "133:51:21"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "StabilityPoolAddressSet"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_stabilityPoolAddress",
+                      "overrides": null,
+                      "scope": 4094,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4091,
+                        "name": "ElementaryTypeName",
+                        "src": "219:7:21"
+                      }
+                    ],
+                    "id": 4092,
+                    "name": "VariableDeclaration",
+                    "src": "219:29:21"
+                  }
+                ],
+                "id": 4093,
+                "name": "ParameterList",
+                "src": "218:31:21"
+              }
+            ],
+            "id": 4094,
+            "name": "EventDefinition",
+            "src": "189:61:21"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "TotalSTBIssuedUpdated"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_totalSTBIssued",
+                      "overrides": null,
+                      "scope": 4098,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4095,
+                        "name": "ElementaryTypeName",
+                        "src": "283:4:21"
+                      }
+                    ],
+                    "id": 4096,
+                    "name": "VariableDeclaration",
+                    "src": "283:20:21"
+                  }
+                ],
+                "id": 4097,
+                "name": "ParameterList",
+                "src": "282:22:21"
+              }
+            ],
+            "id": 4098,
+            "name": "EventDefinition",
+            "src": "255:50:21"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "90107afe",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setAddresses",
+              "overrides": null,
+              "scope": 4118,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_stbTokenAddress",
+                      "overrides": null,
+                      "scope": 4105,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4099,
+                        "name": "ElementaryTypeName",
+                        "src": "359:7:21"
+                      }
+                    ],
+                    "id": 4100,
+                    "name": "VariableDeclaration",
+                    "src": "359:24:21"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_stabilityPoolAddress",
+                      "overrides": null,
+                      "scope": 4105,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4101,
+                        "name": "ElementaryTypeName",
+                        "src": "385:7:21"
+                      }
+                    ],
+                    "id": 4102,
+                    "name": "VariableDeclaration",
+                    "src": "385:29:21"
+                  }
+                ],
+                "id": 4103,
+                "name": "ParameterList",
+                "src": "358:57:21"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4104,
+                "name": "ParameterList",
+                "src": "424:0:21"
+              }
+            ],
+            "id": 4105,
+            "name": "FunctionDefinition",
+            "src": "337:88:21"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "77e704be",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "issueSTB",
+              "overrides": null,
+              "scope": 4118,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4106,
+                "name": "ParameterList",
+                "src": "448:2:21"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 4110,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4107,
+                        "name": "ElementaryTypeName",
+                        "src": "469:4:21"
+                      }
+                    ],
+                    "id": 4108,
+                    "name": "VariableDeclaration",
+                    "src": "469:4:21"
+                  }
+                ],
+                "id": 4109,
+                "name": "ParameterList",
+                "src": "468:6:21"
+              }
+            ],
+            "id": 4110,
+            "name": "FunctionDefinition",
+            "src": "431:44:21"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "a3e12831",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "sendSTB",
+              "overrides": null,
+              "scope": 4118,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_account",
+                      "overrides": null,
+                      "scope": 4117,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4111,
+                        "name": "ElementaryTypeName",
+                        "src": "498:7:21"
+                      }
+                    ],
+                    "id": 4112,
+                    "name": "VariableDeclaration",
+                    "src": "498:16:21"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_STBamount",
+                      "overrides": null,
+                      "scope": 4117,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4113,
+                        "name": "ElementaryTypeName",
+                        "src": "516:4:21"
+                      }
+                    ],
+                    "id": 4114,
+                    "name": "VariableDeclaration",
+                    "src": "516:15:21"
+                  }
+                ],
+                "id": 4115,
+                "name": "ParameterList",
+                "src": "497:35:21"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4116,
+                "name": "ParameterList",
+                "src": "541:0:21"
+              }
+            ],
+            "id": 4117,
+            "name": "FunctionDefinition",
+            "src": "481:61:21"
+          }
+        ],
+        "id": 4118,
+        "name": "ContractDefinition",
+        "src": "65:479:21"
+      }
+    ],
+    "id": 4119,
+    "name": "SourceUnit",
+    "src": "40:504:21"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.750Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

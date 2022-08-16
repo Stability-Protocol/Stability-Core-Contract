@@ -1,0 +1,370 @@
+{
+  "contractName": "IPriceFeed",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_lastGoodPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "LastGoodPriceUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "fetchPrice_v",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_lastGoodPrice\",\"type\":\"uint256\"}],\"name\":\"LastGoodPriceUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"fetchPrice_v\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/Interfaces/IPriceFeed.sol\":\"IPriceFeed\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Interfaces/IPriceFeed.sol\":{\"keccak256\":\"0xf81e74e87004ff2ffb5e70ac4dd2544f82894a9eaac06f32e395dd0821882c1c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://9057703d013737b50d4de7c1f871966d85bf90e801a48fa284740652140866b9\",\"dweb:/ipfs/QmavqaTbGZsR2tFDWRVDd6Pgj2o8SUMT7YfpVunnEfdsKZ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\ninterface IPriceFeed {\n\n    // --- Events ---\n    event LastGoodPriceUpdated(uint _lastGoodPrice);\n\n    // --- Function ---\n    // function fetchPrice() external returns (uint);\n\n    function fetchPrice_v() view external returns (uint);\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/Interfaces/IPriceFeed.sol",
+  "ast": {
+    "absolutePath": "project:/Interfaces/IPriceFeed.sol",
+    "exportedSymbols": {
+      "IPriceFeed": [
+        4494
+      ]
+    },
+    "id": 4495,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4484,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:28"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 4494,
+        "linearizedBaseContracts": [
+          4494
+        ],
+        "name": "IPriceFeed",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4488,
+            "name": "LastGoodPriceUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4487,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4486,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_lastGoodPrice",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4488,
+                  "src": "142:19:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4485,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "142:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "141:21:28"
+            },
+            "src": "115:48:28"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "9c3bc3e6",
+            "id": 4493,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fetchPrice_v",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4489,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "269:2:28"
+            },
+            "returnParameters": {
+              "id": 4492,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4491,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4493,
+                  "src": "295:4:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4490,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "295:4:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "294:6:28"
+            },
+            "scope": 4494,
+            "src": "248:53:28",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4495,
+        "src": "65:238:28"
+      }
+    ],
+    "src": "40:263:28"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/Interfaces/IPriceFeed.sol",
+      "exportedSymbols": {
+        "IPriceFeed": [
+          4494
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 4484,
+        "name": "PragmaDirective",
+        "src": "40:23:28"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            4494
+          ],
+          "name": "IPriceFeed",
+          "scope": 4495
+        },
+        "children": [
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "LastGoodPriceUpdated"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_lastGoodPrice",
+                      "overrides": null,
+                      "scope": 4488,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4485,
+                        "name": "ElementaryTypeName",
+                        "src": "142:4:28"
+                      }
+                    ],
+                    "id": 4486,
+                    "name": "VariableDeclaration",
+                    "src": "142:19:28"
+                  }
+                ],
+                "id": 4487,
+                "name": "ParameterList",
+                "src": "141:21:28"
+              }
+            ],
+            "id": 4488,
+            "name": "EventDefinition",
+            "src": "115:48:28"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "9c3bc3e6",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "fetchPrice_v",
+              "overrides": null,
+              "scope": 4494,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4489,
+                "name": "ParameterList",
+                "src": "269:2:28"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 4493,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4490,
+                        "name": "ElementaryTypeName",
+                        "src": "295:4:28"
+                      }
+                    ],
+                    "id": 4491,
+                    "name": "VariableDeclaration",
+                    "src": "295:4:28"
+                  }
+                ],
+                "id": 4492,
+                "name": "ParameterList",
+                "src": "294:6:28"
+              }
+            ],
+            "id": 4493,
+            "name": "FunctionDefinition",
+            "src": "248:53:28"
+          }
+        ],
+        "id": 4494,
+        "name": "ContractDefinition",
+        "src": "65:238:28"
+      }
+    ],
+    "id": 4495,
+    "name": "SourceUnit",
+    "src": "40:263:28"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.756Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

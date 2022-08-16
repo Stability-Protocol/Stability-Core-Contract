@@ -1,0 +1,345 @@
+{
+  "contractName": "IBaseOracle",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getPrice(address)\":{\"details\":\"Return the value of the given input as USD per unit.\",\"params\":{\"token\":\"The ERC-20 token to check the value.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/Interfaces/IBaseOracle.sol\":\"IBaseOracle\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Interfaces/IBaseOracle.sol\":{\"keccak256\":\"0xddced2a71eb23fb08748f3929a06ed0c2c864ae2e6657b8accf696f5cb417b50\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://79e3a548b76d976e8cc86e5cdc09dd0b548e0691f23ed30e14c12d66c608ed5a\",\"dweb:/ipfs/QmTPSt7sSY5fpppmtFc3ibSfp9xQMULiAa4G8Re3MnZHSM\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\ninterface IBaseOracle {\n  /// @dev Return the value of the given input as USD per unit.\n  /// @param token The ERC-20 token to check the value.\n  function getPrice(address token) external view returns (uint);\n\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/Interfaces/IBaseOracle.sol",
+  "ast": {
+    "absolutePath": "project:/Interfaces/IBaseOracle.sol",
+    "exportedSymbols": {
+      "IBaseOracle": [
+        3790
+      ]
+    },
+    "id": 3791,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3781,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:17"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 3790,
+        "linearizedBaseContracts": [
+          3790
+        ],
+        "name": "IBaseOracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 3782,
+              "nodeType": "StructuredDocumentation",
+              "src": "91:117:17",
+              "text": "@dev Return the value of the given input as USD per unit.\n @param token The ERC-20 token to check the value."
+            },
+            "functionSelector": "41976e09",
+            "id": 3789,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 3785,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3784,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3789,
+                  "src": "229:13:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3783,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "229:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "228:15:17"
+            },
+            "returnParameters": {
+              "id": 3788,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3787,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 3789,
+                  "src": "267:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3786,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "267:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "266:6:17"
+            },
+            "scope": 3790,
+            "src": "211:62:17",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3791,
+        "src": "65:211:17"
+      }
+    ],
+    "src": "40:236:17"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/Interfaces/IBaseOracle.sol",
+      "exportedSymbols": {
+        "IBaseOracle": [
+          3790
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 3781,
+        "name": "PragmaDirective",
+        "src": "40:23:17"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            3790
+          ],
+          "name": "IBaseOracle",
+          "scope": 3791
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "41976e09",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getPrice",
+              "overrides": null,
+              "scope": 3790,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev Return the value of the given input as USD per unit.\n @param token The ERC-20 token to check the value."
+                },
+                "id": 3782,
+                "name": "StructuredDocumentation",
+                "src": "91:117:17"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "token",
+                      "overrides": null,
+                      "scope": 3789,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 3783,
+                        "name": "ElementaryTypeName",
+                        "src": "229:7:17"
+                      }
+                    ],
+                    "id": 3784,
+                    "name": "VariableDeclaration",
+                    "src": "229:13:17"
+                  }
+                ],
+                "id": 3785,
+                "name": "ParameterList",
+                "src": "228:15:17"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 3789,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 3786,
+                        "name": "ElementaryTypeName",
+                        "src": "267:4:17"
+                      }
+                    ],
+                    "id": 3787,
+                    "name": "VariableDeclaration",
+                    "src": "267:4:17"
+                  }
+                ],
+                "id": 3788,
+                "name": "ParameterList",
+                "src": "266:6:17"
+              }
+            ],
+            "id": 3789,
+            "name": "FunctionDefinition",
+            "src": "211:62:17"
+          }
+        ],
+        "id": 3790,
+        "name": "ContractDefinition",
+        "src": "65:211:17"
+      }
+    ],
+    "id": 3791,
+    "name": "SourceUnit",
+    "src": "40:236:17"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.744Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getPrice(address)": {
+        "details": "Return the value of the given input as USD per unit.",
+        "params": {
+          "token": "The ERC-20 token to check the value."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

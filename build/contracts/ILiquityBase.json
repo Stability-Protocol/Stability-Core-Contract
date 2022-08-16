@@ -1,0 +1,291 @@
+{
+  "contractName": "ILiquityBase",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getEntireSystemDebt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "entireSystemDebt",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getEntireSystemDebt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"entireSystemDebt\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/Interfaces/ILiquityBase.sol\":\"ILiquityBase\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/Interfaces/ILiquityBase.sol\":{\"keccak256\":\"0x817a1416164e60eda90fcc6b0756506314b47663f523f4f5611118d7d52c50b5\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://c05a46d0e74b81b60a66a510aae76b9eb9b1d601d3dd43b188cbe13282364a87\",\"dweb:/ipfs/QmdgUUB7GxGpXAYMeFsBYD21SbpsG8wJCuPQSHjUXsJQL2\"]},\"project:/Interfaces/IPriceFeed.sol\":{\"keccak256\":\"0xf81e74e87004ff2ffb5e70ac4dd2544f82894a9eaac06f32e395dd0821882c1c\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://9057703d013737b50d4de7c1f871966d85bf90e801a48fa284740652140866b9\",\"dweb:/ipfs/QmavqaTbGZsR2tFDWRVDd6Pgj2o8SUMT7YfpVunnEfdsKZ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\n\npragma solidity 0.6.11;\n\nimport \"./IPriceFeed.sol\";\n\n\ninterface ILiquityBase {\n\n    function getEntireSystemDebt() external view returns (uint entireSystemDebt);\n}",
+  "sourcePath": "/Users/phaxsam/Core-Stability_Truffle/Interfaces/ILiquityBase.sol",
+  "ast": {
+    "absolutePath": "project:/Interfaces/ILiquityBase.sol",
+    "exportedSymbols": {
+      "ILiquityBase": [
+        4330
+      ]
+    },
+    "id": 4331,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4323,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "40:23:25"
+      },
+      {
+        "absolutePath": "project:/Interfaces/IPriceFeed.sol",
+        "file": "./IPriceFeed.sol",
+        "id": 4324,
+        "nodeType": "ImportDirective",
+        "scope": 4331,
+        "sourceUnit": 4495,
+        "src": "65:26:25",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 4330,
+        "linearizedBaseContracts": [
+          4330
+        ],
+        "name": "ILiquityBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "795d26c3",
+            "id": 4329,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getEntireSystemDebt",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4325,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "152:2:25"
+            },
+            "returnParameters": {
+              "id": 4328,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4327,
+                  "mutability": "mutable",
+                  "name": "entireSystemDebt",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4329,
+                  "src": "178:21:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4326,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "178:4:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "177:23:25"
+            },
+            "scope": 4330,
+            "src": "124:77:25",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4331,
+        "src": "94:109:25"
+      }
+    ],
+    "src": "40:163:25"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/Interfaces/ILiquityBase.sol",
+      "exportedSymbols": {
+        "ILiquityBase": [
+          4330
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".11"
+          ]
+        },
+        "id": 4323,
+        "name": "PragmaDirective",
+        "src": "40:23:25"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4495,
+          "absolutePath": "project:/Interfaces/IPriceFeed.sol",
+          "file": "./IPriceFeed.sol",
+          "scope": 4331,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 4324,
+        "name": "ImportDirective",
+        "src": "65:26:25"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            4330
+          ],
+          "name": "ILiquityBase",
+          "scope": 4331
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "795d26c3",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getEntireSystemDebt",
+              "overrides": null,
+              "scope": 4330,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4325,
+                "name": "ParameterList",
+                "src": "152:2:25"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "entireSystemDebt",
+                      "overrides": null,
+                      "scope": 4329,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 4326,
+                        "name": "ElementaryTypeName",
+                        "src": "178:4:25"
+                      }
+                    ],
+                    "id": 4327,
+                    "name": "VariableDeclaration",
+                    "src": "178:21:25"
+                  }
+                ],
+                "id": 4328,
+                "name": "ParameterList",
+                "src": "177:23:25"
+              }
+            ],
+            "id": 4329,
+            "name": "FunctionDefinition",
+            "src": "124:77:25"
+          }
+        ],
+        "id": 4330,
+        "name": "ContractDefinition",
+        "src": "94:109:25"
+      }
+    ],
+    "id": 4331,
+    "name": "SourceUnit",
+    "src": "40:163:25"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.9",
+  "updatedAt": "2022-08-15T22:38:51.754Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

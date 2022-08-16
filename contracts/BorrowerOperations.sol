@@ -446,9 +446,7 @@ contract BorrowerOperations is LiquityBase, Ownable, IBorrowerOperations, Reentr
             _amountsOut,
             new uint256[](0), // max leverages is a 0 array in this case.
             _SUSDChange,
-            0,
             _isDebtIncrease,
-            false,
             _upperHint,
             _lowerHint,
             _maxFeePercentage
@@ -563,7 +561,7 @@ contract BorrowerOperations is LiquityBase, Ownable, IBorrowerOperations, Reentr
         );
 
         // When the adjustment is a debt repayment, check it's a valid amount and that the caller has enough YUSD
-        if (!params._isUnlever && !params._isDebtIncrease && params._SUSDChange != 0) {
+        if (!params._isDebtIncrease && params._SUSDChange != 0) {
             _requireAtLeastMinNetDebt(_getNetDebt(vars.debt).sub(vars.netDebtChange));
             _requireValidSUSDRepayment(vars.debt, vars.netDebtChange);
             _requireSufficientSUSDBalance(contractsCache.susdToken, msg.sender, vars.netDebtChange);

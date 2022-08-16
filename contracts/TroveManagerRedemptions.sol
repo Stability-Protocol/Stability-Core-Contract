@@ -124,8 +124,8 @@ contract TroveManagerRedemptions is TroveManagerBase, ITroveManagerRedemptions {
 
     /** 
      * Main function for redeeming collateral. See above for how YUSDMaxFee is calculated.
-     * @param _YUSDamount is equal to the amount of YUSD to actually redeem. 
-     * @param _YUSDMaxFee is equal to the max fee in YUSD that the sender is willing to pay
+     * @param _SUSDamount is equal to the amount of YUSD to actually redeem. 
+     * @param _SUSDMaxFee is equal to the max fee in YUSD that the sender is willing to pay
      * _YUSDamount + _YUSDMaxFee must be less than the balance of the sender.
      */
     function redeemCollateral(
@@ -250,8 +250,8 @@ contract TroveManagerRedemptions is TroveManagerBase, ITroveManagerRedemptions {
 
     /** 
      * Secondary function for redeeming collateral. See above for how YUSDMaxFee is calculated.
-     * @param _YUSDamount is equal to the amount of YUSD to actually redeem. 
-     * @param _YUSDMaxFee is equal to the max fee in YUSD that the sender is willing to pay
+     * @param _SUSDamount is equal to the amount of YUSD to actually redeem. 
+     * @param _SUSDMaxFee is equal to the max fee in YUSD that the sender is willing to pay
      * _YUSDamount + _YUSDMaxFee must be less than the balance of the sender.
      */
     function redeemCollateralSingle(
